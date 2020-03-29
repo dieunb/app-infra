@@ -11,7 +11,7 @@ metadata:
     app: external-service
 spec:
   rules:
-    - host: localhost:3000
+    - host: localhost
       http:
         paths:
           - path: "/"
