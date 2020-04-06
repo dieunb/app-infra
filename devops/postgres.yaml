@@ -11,7 +11,7 @@ spec:
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: bitnami/postgresql
-    version: 8.0.0
+    version: 8.6.13
   values:
     ## Global Docker image parameters
     ## Please, note that this will override the image parameters, including dependencies, configured to use the global value
