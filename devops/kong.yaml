@@ -9,8 +9,8 @@ metadata:
 spec:
   releaseName: kong-gateway
   chart:
-    repository: https://charts.konghq.com/kong
-    name: kong
+    repository: https://charts.konghq.com
+    name: kong/kong
     version: 1.4.0
   values:
     # Default values for Kong's Helm Chart.
