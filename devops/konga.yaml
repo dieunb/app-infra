@@ -2,12 +2,12 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: kong
+  name: konga
   namespace: devops
   annotations:
     flux.weave.works/automated: "true"
 spec:
-  releaseName: kong-gateway
+  releaseName: konga
   chart:
     git: git@github.com:pantsel/konga.git
     ref: master
