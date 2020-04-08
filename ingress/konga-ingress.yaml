@@ -8,9 +8,10 @@ metadata:
     app: konga
 spec:
   rules:
-  - http:
-      paths:
-      - path: /konga
-        backend:
-          serviceName: konga.devops.svc.cluster.local
-          servicePort: 80
+    - host: konga.kubernetes.internal
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: konga
+            servicePort: 80
