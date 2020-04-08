@@ -11,7 +11,7 @@ spec:
   chart:
     git: git@github.com:pantsel/konga.git
     ref: master
-    path: chart/konga
+    path: charts/konga
   values:
     # Default values for konga.
     # This is a YAML-formatted file.
