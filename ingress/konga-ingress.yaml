@@ -1,0 +1,16 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: konga-ingress
+  namespace: devops
+  labels:
+    app: konga
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /konga
+        backend:
+          serviceName: konga
+          servicePort: 1337
