@@ -12,5 +12,5 @@ spec:
       paths:
       - path: /konga
         backend:
-          serviceName: konga.devops.svc.svc.cluster.local
+          serviceName: konga.devops.svc.cluster.local
           servicePort: 80
