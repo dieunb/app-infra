@@ -178,7 +178,10 @@ spec:
         # Ingress path.
         path: /
 
-      externalIPs: []
+      externalIPs:
+        - 127.0.0.1
+        - 10.1.0.10
+        - localhost
 
     # Custom Kong plugins can be loaded into Kong by mounting the plugin code
     # into the file-system of Kong container.
