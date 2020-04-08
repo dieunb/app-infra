@@ -9,7 +9,7 @@ metadata:
 spec:
   releaseName: konga
   chart:
-    git: git@github.com:pantsel/konga.git
+    git: https://github.com/pantsel/konga.git
     ref: master
     path: charts/konga
   values:
