@@ -179,8 +179,7 @@ spec:
         path: /
 
       externalIPs:
-        - 127.0.0.1
-        - 0.0.0.0
+        - 172.217.31.238
     # Custom Kong plugins can be loaded into Kong by mounting the plugin code
     # into the file-system of Kong container.
     # The plugin code should be present in ConfigMap or Secret inside the same
