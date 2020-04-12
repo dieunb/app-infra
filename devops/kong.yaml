@@ -60,7 +60,7 @@ spec:
     # Specify Kong's Docker image and repository details here
     image:
       repository: kong
-      tag: "2.0-ubuntu"
+      tag: "2.0-centos"
       # kong-enterprise-k8s image (Kong OSS + Enterprise plugins)
       # repository: kong-docker-kong-enterprise-k8s.bintray.io/kong-enterprise-k8s
       # tag: "2.0.2.0-alpine"
@@ -456,12 +456,12 @@ spec:
       targetCPUUtilizationPercentage:
       ## Otherwise for clusters that do support autoscaling/v2beta, use metrics
       metrics:
-        - type: Resource
-          resource:
-            name: cpu
-            target:
-              type: Utilization
-              averageUtilization: 80
+      - type: Resource
+        resource:
+          name: cpu
+          target:
+            type: Utilization
+            averageUtilization: 80
 
     # Kong Pod Disruption Budget
     podDisruptionBudget:
@@ -483,9 +483,9 @@ spec:
         supplementalGroups:
           rule: RunAsAny
         volumes:
-          - 'configMap'
-          - 'secret'
-          - 'emptyDir'
+        - 'configMap'
+        - 'secret'
+        - 'emptyDir'
         allowPrivilegeEscalation: false
         hostNetwork: false
         hostIPC: false
