@@ -1,8 +1,36 @@
 ---
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: demo-cors
+  namespace: devops
+config:
+  methods:
+    - HEAD
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+  exposed_headers: {}
+  max_age: ""
+  headers:
+    - Authorization
+    - Jwt-Token
+    - Content-Type
+  origins:
+    - "*"
+  credentials: "true"
+  preflight_continue: "false"
+plugin: cors
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: demo
+  namespace: devops
+  annotations:
+    konghq.com/plugins: demo-cors
 spec:
   rules:
   - http:
