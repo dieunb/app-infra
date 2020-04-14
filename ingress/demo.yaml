@@ -20,8 +20,8 @@ config:
     - Content-Type
   origins:
     - "*"
-  credentials: True
-  preflight_continue: False
+  credentials: true
+  preflight_continue: false
 plugin: cors
 ---
 apiVersion: extensions/v1beta1
