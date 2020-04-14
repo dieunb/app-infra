@@ -12,8 +12,6 @@ config:
     - PUT
     - PATCH
     - DELETE
-  exposed_headers: {}
-  max_age: 3600
   headers:
     - Authorization
     - Jwt-Token
@@ -21,7 +19,6 @@ config:
   origins:
     - "*"
   credentials: true
-  preflight_continue: false
 plugin: cors
 ---
 apiVersion: extensions/v1beta1
