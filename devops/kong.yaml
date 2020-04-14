@@ -36,6 +36,7 @@ spec:
       database: "postgres"
       log_level: debug
       plugins: bundled
+      authentication_secret_key: "1234"
       pg_host:
         valueFrom:
           secretKeyRef:
