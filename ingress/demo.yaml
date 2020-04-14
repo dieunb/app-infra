@@ -13,15 +13,15 @@ config:
     - PATCH
     - DELETE
   exposed_headers: {}
-  max_age: ""
+  max_age: 3600
   headers:
     - Authorization
     - Jwt-Token
     - Content-Type
   origins:
     - "*"
-  credentials: "true"
-  preflight_continue: "false"
+  credentials: True
+  preflight_continue: False
 plugin: cors
 ---
 apiVersion: extensions/v1beta1
