@@ -6,6 +6,7 @@ metadata:
   namespace: dev
   annotations:
     kubernetes.io/ingress.class: kong
+    konghq.com/path: "/open_api/v1"
     konghq.com/override: api-proxy-custom
     konghq.com/plugins: api-proxy-rate-limiting
   labels:
@@ -69,7 +70,7 @@ upstream:
         timeouts: 0
 proxy:
   protocol: http
-  path: /open_api/v1
+  path: "/open_api/v1"
 route:
   methods:
     - POST
