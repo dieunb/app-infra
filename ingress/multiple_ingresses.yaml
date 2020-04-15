@@ -46,8 +46,7 @@ metadata:
     kubernetes.io/ingress.class: kong
     konghq.com/override: api-proxy-custom
     konghq.com/plugins: api-proxy-rate-limiting
-    konghq.com/path: "/open_api/v1"
-    konghq.com/protocol: https
+    configuration.konghq.com/path: "/open_api/v1"
   labels:
     app: echo
 spec:
