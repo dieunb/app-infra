@@ -68,9 +68,6 @@ upstream:
           - 503
         tcp_failures: 0
         timeouts: 0
-proxy:
-  protocol: http
-  path: "/open_api/v1"
 route:
   methods:
     - POST
