@@ -3,7 +3,7 @@ apiVersion: configuration.konghq.com/v1
 kind: KongPlugin
 metadata:
   name: demo-cors
-  namespace: devops
+  namespace: default
 config:
   methods:
     - HEAD
@@ -25,7 +25,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: demo
-  namespace: devops
+  namespace: default
   annotations:
     konghq.com/plugins: demo-cors
 spec:
