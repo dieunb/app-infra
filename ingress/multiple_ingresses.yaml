@@ -4,6 +4,9 @@ kind: KongIngress
 metadata:
   name: api-proxy-custom
   namespace: default
+proxy:
+  path: "/open_api/v1"
+  host: "https://api.local.internal"
 route:
   methods:
     - POST
@@ -46,8 +49,6 @@ metadata:
     kubernetes.io/ingress.class: kong
     konghq.com/override: api-proxy-custom
     konghq.com/plugins: api-proxy-rate-limiting
-    konghq.com/path: "/open_api/v1"
-    konghq.com/host: "http://host.local.internal"
   labels:
     app: echo
 spec:
@@ -57,12 +58,12 @@ spec:
         paths:
           - path: "/api/v1"
             backend:
-              serviceName: "http://host.local.internal"
+              serviceName: open-api
               servicePort: 80
     - host: openapi.demo.local.internal
       http:
         paths:
           - path: "/api/v1"
             backend:
-              serviceName: "http://host.local.internal"
+              serviceName: open-api
               servicePort: 80
