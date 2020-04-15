@@ -3,13 +3,15 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: api-proxy
-  namespace: dev
+  namespace: default
   annotations:
     kubernetes.io/ingress.class: kong
     konghq.com/override: api-proxy-custom
     konghq.com/plugins: api-proxy-rate-limiting
+    konghq.com/path: "/open_api/v1"
+    konghq.com/protocol: https
   labels:
-    app: demo
+    app: echo
 spec:
   rules:
     - host: api.demo.local.internal
@@ -31,46 +33,7 @@ apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
   name: api-proxy-custom
-  namespace: dev
-upstream:
-  slots: 10
-  hash_on: none
-  hash_fallback: none
-  healthchecks:
-    threshold: 25
-    active:
-      concurrency: 10
-      healthy:
-        http_statuses:
-          - 200
-          - 302
-        interval: 0
-        successes: 0
-      http_path: "/"
-      timeout: 1
-      unhealthy:
-        http_failures: 0
-        http_statuses:
-          - 429
-        interval: 0
-        tcp_failures: 0
-        timeouts: 0
-    passive:
-      healthy:
-        http_statuses:
-          - 200
-        successes: 0
-      unhealthy:
-        http_failures: 0
-        http_statuses:
-          - 429
-          - 503
-        tcp_failures: 0
-        timeouts: 0
-proxy:
-  path: "open_api/v1"
-  retries: 9999
-  connection_timeout: 70000
+  namespace: default
 route:
   methods:
     - POST
