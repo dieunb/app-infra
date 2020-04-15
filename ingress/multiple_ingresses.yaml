@@ -53,7 +53,7 @@ route:
  kind: KongPlugin
  metadata:
    name: api-proxy-rate-limiting
-   namespace: dev
+   namespace: default
  config:
    redis_database: 0
    policy: "cluster"
