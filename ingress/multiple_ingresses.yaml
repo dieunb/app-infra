@@ -7,6 +7,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: kong
     konghq.com/override: api-proxy-custom
+    konghq.com/plugins: api-proxy-rate-limiting
   labels:
     app: demo
 spec:
@@ -30,6 +31,7 @@ apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
   name: api-proxy-custom
+  namespace: dev
 upstream:
   slots: 10
   hash_on: none
@@ -82,3 +84,21 @@ route:
   protocols:
     - http
     - https
+---
+ apiVersion: configuration.konghq.com/v1
+ kind: KongPlugin
+ metadata:
+   name: api-proxy-rate-limiting
+   namespace: dev
+ config:
+   redis_database: 0
+   policy: "cluster"
+   redis_timeout: 2000
+   hide_client_headers: false
+   hour: 2000
+   minute: 100
+   limit_by: "ip"
+   redis_port: 6379
+   second: 10
+   fault_tolerant: true
+ plugin: rate-limiting
