@@ -1,34 +1,4 @@
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: api-proxy
-  namespace: default
-  annotations:
-    kubernetes.io/ingress.class: kong
-    konghq.com/override: api-proxy-custom
-    konghq.com/plugins: api-proxy-rate-limiting
-    konghq.com/path: "/open_api/v1"
-    konghq.com/protocol: https
-  labels:
-    app: echo
-spec:
-  rules:
-    - host: api.demo.local.internal
-      http:
-        paths:
-          - path: "/api/v1"
-            backend:
-              serviceName: echo
-              servicePort: 80
-    - host: openapi.demo.local.internal
-      http:
-        paths:
-          - path: "/api/v1"
-            backend:
-              serviceName: echo
-              servicePort: 80
----
 apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
@@ -66,3 +36,34 @@ route:
    second: 10
    fault_tolerant: true
  plugin: rate-limiting
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: api-proxy
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: kong
+    konghq.com/override: api-proxy-custom
+    konghq.com/plugins: api-proxy-rate-limiting
+    konghq.com/path: "/open_api/v1"
+    konghq.com/protocol: https
+  labels:
+    app: echo
+spec:
+  rules:
+    - host: api.demo.local.internal
+      http:
+        paths:
+          - path: "/api/v1"
+            backend:
+              serviceName: echo
+              servicePort: 80
+    - host: openapi.demo.local.internal
+      http:
+        paths:
+          - path: "/api/v1"
+            backend:
+              serviceName: echo
+              servicePort: 80
+
