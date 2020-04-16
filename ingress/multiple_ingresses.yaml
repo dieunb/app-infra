@@ -4,9 +4,14 @@ kind: KongIngress
 metadata:
   name: api-proxy-custom
   namespace: default
+upstream: {}
 proxy:
-  path: "/open_api/v1"
-  host: "https://api.local.internal"
+  protocol: http
+  path: /open_api/v1
+  connect_timeout: 10000
+  retries: 10
+  read_timeout: 10000
+  write_timeout: 10000
 route:
   methods:
     - POST
