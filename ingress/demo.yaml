@@ -21,6 +21,28 @@ config:
   credentials: true
 plugin: cors
 ---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: demo-ki
+  namespace: default
+upstream:
+  host_header: "echo.internal.local"
+route:
+  methods:
+    - POST
+    - GET
+    - PUT
+    - PATCH
+    - OPTION
+    - HEAD
+  regex_priority: 0
+  strip_path: true
+  preserve_host: false
+  protocols:
+    - http
+    - https
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -28,6 +50,7 @@ metadata:
   namespace: default
   annotations:
     konghq.com/plugins: demo-cors
+    konghq.com/override: demo-ki
 spec:
   rules:
   - http:
