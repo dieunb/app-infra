@@ -35,10 +35,19 @@ spec:
     # e.g. setting pg_user here will override the value normally set when postgresql.enabled
     # is set below. In general, you should not set values here if they are set elsewhere.
     env:
+      AUTHENTICATION_KEY:
+        valueFrom:
+          secretKeyRef:
+            key: KONG_PG_PASSWORD
+            name: kong-secret
       database: "postgres"
       log_level: debug
       plugins: bundled
-      authentication_secret_key: "1234"
+      authentication_secret_key:
+        valueFrom:
+          secretKeyRef:
+            key: KONG_PG_PASSWORD
+            name: kong-secret
       pg_host:
         valueFrom:
           secretKeyRef:
