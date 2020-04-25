@@ -21,7 +21,7 @@ metadata:
   name: api-proxy-custom
   namespace: default
 upstream:
-  host_header: open_api.internal.local
+  host_header: google.com
 proxy:
   protocol: http
   path: /open_api/v1
