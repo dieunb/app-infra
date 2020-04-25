@@ -50,7 +50,6 @@ metadata:
   namespace: default
   annotations:
     konghq.com/plugins: demo-cors
-    konghq.com/override: demo-ki
 spec:
   rules:
   - http:

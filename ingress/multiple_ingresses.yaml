@@ -3,6 +3,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: open-api-proxy-web
+  annotations:
+    konghq.com/override: api-proxy-custom
 spec:
   type: ClusterIP
   selector:
@@ -18,7 +20,8 @@ kind: KongIngress
 metadata:
   name: api-proxy-custom
   namespace: default
-upstream: {}
+upstream:
+  host_header: open_api.internal.local
 proxy:
   protocol: http
   path: /open_api/v1
@@ -66,7 +69,6 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: kong
-    konghq.com/override: api-proxy-custom
     konghq.com/plugins: api-proxy-rate-limiting
 spec:
   rules:
