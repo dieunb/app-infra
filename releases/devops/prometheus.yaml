@@ -9,8 +9,8 @@ metadata:
 spec:
   releaseName: prometheus
   chart:
-    repository: https://kubernetes-charts.storage.googleapis.com
-    name: stable/prometheus
+    repository: https://kubernetes-charts.storage.googleapis.com/stable
+    name: prometheus
     version: 11.1.4
   values:
     rbac:
