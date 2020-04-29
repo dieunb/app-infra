@@ -78,7 +78,7 @@ spec:
     testFramework:
       enabled: true
       image: "bats/bats"
-      tag: "v1.1.0"
+      tag: "v1"
       imagePullPolicy: IfNotPresent
       securityContext: {}
 
