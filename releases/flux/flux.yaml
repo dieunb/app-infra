@@ -10,7 +10,7 @@ spec:
   releaseName: flux
   chart:
     repository: https://charts.fluxcd.io
-    name: fluxcd/flux
+    name: flux
     version: 1.3.0
   values:
     # Weave Cloud service token
