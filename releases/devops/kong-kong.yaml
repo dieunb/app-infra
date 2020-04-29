@@ -5,6 +5,6 @@ metadata:
   name: global-prometheus
   namespace: devops
   labels:
-    global: \"true\"
+    global: "true"
 config: {}
 plugin: prometheus
