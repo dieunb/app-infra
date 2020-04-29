@@ -560,7 +560,7 @@ spec:
       ##
       image:
         repository: prom/prometheus
-        tag: v2.16.0
+        tag: master
         pullPolicy: IfNotPresent
 
       ## prometheus server priorityClassName
