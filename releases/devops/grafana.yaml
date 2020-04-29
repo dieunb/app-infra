@@ -65,7 +65,7 @@ spec:
 
     image:
       repository: grafana/grafana
-      tag: 6.7.3
+      tag: master
       pullPolicy: IfNotPresent
 
       ## Optionally specify an array of imagePullSecrets.
@@ -151,7 +151,7 @@ spec:
       labels: {}
       path: /
       hosts:
-        - chart-example.local
+      - chart-example.local
       ## Extra paths to prepend to every host configuration. This is useful when working with annotation based services.
       extraPaths: []
       # - path: /*
@@ -213,11 +213,11 @@ spec:
       enabled: false
       # storageClassName: default
       accessModes:
-        - ReadWriteOnce
+      - ReadWriteOnce
       size: 10Gi
       # annotations: {}
       finalizers:
-        - kubernetes.io/pvc-protection
+      - kubernetes.io/pvc-protection
       # subPath: ""
       # existingClaim:
 
@@ -489,11 +489,11 @@ spec:
         # folder in the pod that should hold the collected dashboards (unless `defaultFolderName` is set)
         folder: /tmp/dashboards
         # The default folder name, it will create a subfolder under the `folder` and put dashboards in there instead
-        defaultFolderName: null
+        defaultFolderName:
         # If specified, the sidecar will search for dashboard config-maps inside this namespace.
         # Otherwise the namespace in which the sidecar is running will be used.
         # It's also possible to specify ALL to search in all namespaces
-        searchNamespace: null
+        searchNamespace:
         # provider configuration that lets grafana manage the dashboards
         provider:
           # name of the provider, should be unique
@@ -515,7 +515,7 @@ spec:
         # If specified, the sidecar will search for datasource config-maps inside this namespace.
         # Otherwise the namespace in which the sidecar is running will be used.
         # It's also possible to specify ALL to search in all namespaces
-        searchNamespace: null
+        searchNamespace:
 
     ## Override the deployment namespace
     ##
