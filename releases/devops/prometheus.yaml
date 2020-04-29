@@ -946,7 +946,7 @@ spec:
       ##
       image:
         repository: prom/pushgateway
-        tag: v1.0.1
+        tag: master
         pullPolicy: IfNotPresent
 
       ## pushgateway priorityClassName
