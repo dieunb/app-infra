@@ -9,7 +9,7 @@ metadata:
 spec:
   releaseName: podinfo-dev
   chart:
-    git: https://github.com/dieunb/app-infra.git
+    git: git@github.com:dieunb/app-infra.git
     path: charts/mokey
     ref: master
   values:
