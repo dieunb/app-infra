@@ -283,7 +283,7 @@ spec:
 
     syncGarbageCollection:
       enabled: true
-      dry: false
+      dry: true
 
     # Enables manifest generation
     manifestGeneration: false
