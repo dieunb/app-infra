@@ -65,7 +65,7 @@ spec:
 
     image:
       repository: grafana/grafana
-      tag: master
+      tag: master-ubuntu
       pullPolicy: IfNotPresent
 
       ## Optionally specify an array of imagePullSecrets.
