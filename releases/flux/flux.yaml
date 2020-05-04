@@ -95,7 +95,7 @@ sync:
 
 git:
   # URL of git repo with Kubernetes manifests; e.g. git.url=ssh://git@github.com/fluxcd/flux-get-started
-  url: "ssh://git@github.com:dieunb/app-infra.git"
+  url: "git@github.com:dieunb/app-infra.git"
   # Branch of git repo to use for Kubernetes manifests
   branch: "master"
   # Path within git repo to locate Kubernetes manifests (relative path)
@@ -128,7 +128,7 @@ git:
   # 3. Delete the private key: rm ./identity
   # 4. Add ./identity.pub as a deployment key with write access in your Git repo
   # 5. Set the secret name (flux-ssh) below
-  secretName: "flux-get-deploy"
+  secretName: ""
   # Enables `git-secret` support, as this makes use of known GPG keys
   # you will need to have imported the paired secret-key with one of
   # the public-keys which were used in the encryption using
