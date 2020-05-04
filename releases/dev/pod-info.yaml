@@ -19,8 +19,12 @@ spec:
     replicaCount: 1
     resources:
       limits:
-        cpu: 200m
-        memory: 64Mi
+        cpu: 300m
+        memory: 256Mi
       requests:
         cpu: 100m
-        memory: 32Mi
+        memory: 128Mi
+    livenessProbe:
+      enabled: false
+    readinessProbe:
+      enabled: false
