@@ -6,6 +6,7 @@ replicaCount: 1
 
 image:
   repository: nginx
+  tag: 1.0
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
@@ -48,6 +49,23 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+
+## Configure liveness and readiness probe values
+## Ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes
+livenessProbe:
+  enabled: true
+  failureThreshold: 3
+  initialDelaySeconds: 0
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
+readinessProbe:
+  enabled: true
+  failureThreshold: 3
+  initialDelaySeconds: 0
+  periodSeconds: 10
+  successThreshold: 1
+  timeoutSeconds: 1
 
 resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
