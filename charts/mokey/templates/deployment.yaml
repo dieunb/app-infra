@@ -41,7 +41,7 @@ spec:
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
             successThreshold: {{ .Values.livenessProbe.successThreshold }}
             timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
-          {{- end -}}
+          {{- end }}
           {{- if .Values.readinessProbe.enabled -}}
           readinessProbe:
             httpGet:
@@ -52,7 +52,7 @@ spec:
             periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
             successThreshold: {{ .Values.readinessProbe.successThreshold }}
             timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
-          {{- end -}}
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
