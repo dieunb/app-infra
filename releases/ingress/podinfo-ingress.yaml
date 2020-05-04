@@ -2,7 +2,7 @@
 apiVersion: configuration.konghq.com/v1
 kind: KongPlugin
 metadata:
-  name: demo-cors
+  name: podinfo-cors
   namespace: dev
 config:
   methods:
@@ -24,10 +24,10 @@ plugin: cors
 apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
-  name: demo-ki
+  name: podinfo-ki
   namespace: dev
 upstream:
-  host_header: "echo.internal.local"
+  host_header: "podinfo.internal.local"
 route:
   methods:
     - POST
@@ -46,15 +46,15 @@ route:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: demo
+  name: podinfo-ingress
   namespace: dev
   annotations:
-    konghq.com/plugins: demo-cors
+    konghq.com/plugins: podinfo-cors
 spec:
   rules:
   - http:
       paths:
       - path: /foo
         backend:
-          serviceName: podinfo-monkey
-          servicePort: 80
+          serviceName: podinfo-dev
+          servicePort: 8989
