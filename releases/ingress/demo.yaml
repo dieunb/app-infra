@@ -3,7 +3,7 @@ apiVersion: configuration.konghq.com/v1
 kind: KongPlugin
 metadata:
   name: demo-cors
-  namespace: default
+  namespace: dev
 config:
   methods:
     - HEAD
@@ -25,7 +25,7 @@ apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
   name: demo-ki
-  namespace: default
+  namespace: dev
 upstream:
   host_header: "echo.internal.local"
 route:
@@ -47,7 +47,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: demo
-  namespace: default
+  namespace: dev
   annotations:
     konghq.com/plugins: demo-cors
 spec:
@@ -56,5 +56,5 @@ spec:
       paths:
       - path: /foo
         backend:
-          serviceName: echo
+          serviceName: podinfo-monkey
           servicePort: 80
