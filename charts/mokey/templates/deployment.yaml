@@ -31,7 +31,7 @@ spec:
             - name: http
               containerPort: 80
               protocol: TCP
-          {{- if .Values.livenessProbe.enabled }}
+          {{- if .Values.livenessProbe.enabled -}}
           livenessProbe:
             httpGet:
               path: /
@@ -41,8 +41,8 @@ spec:
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
             successThreshold: {{ .Values.livenessProbe.successThreshold }}
             timeoutSeconds: {{ .Values.livenessProbe.timeoutSeconds }}
-          {{- end }}
-          {{- if .Values.readinessProbe.enabled }}
+          {{- end -}}
+          {{- if .Values.readinessProbe.enabled -}}
           readinessProbe:
             httpGet:
               path: /
@@ -52,7 +52,7 @@ spec:
             periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
             successThreshold: {{ .Values.readinessProbe.successThreshold }}
             timeoutSeconds: {{ .Values.readinessProbe.timeoutSeconds }}
-          {{- end }}
+          {{- end -}}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
