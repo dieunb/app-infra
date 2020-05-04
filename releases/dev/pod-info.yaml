@@ -2,12 +2,12 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: podinfo-dev
+  name: podinfo
   namespace: dev
   annotations:
     fluxcd.io/automated: "true"
 spec:
-  releaseName: podinfo-dev
+  releaseName: podinfo
   chart:
     git: git@github.com:dieunb/app-infra.git
     path: charts/mokey
