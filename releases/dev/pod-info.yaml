@@ -2,29 +2,21 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: podinfo
+  name: podinfo-dev
   namespace: dev
   annotations:
     fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:dev-*
 spec:
-  releaseName: podinfo
+  releaseName: podinfo-dev
   chart:
-    git: git@github.com:dieunb/app-infra.git
-    path: charts/mokey
+    git: git@github.com:fluxcd/helm-operator-get-started
+    path: charts/podinfo
     ref: master
   values:
     image:
       repository: stefanprodan/podinfo
-      tag: 3.2.3
+      tag: dev-hdtwcel9
     replicaCount: 1
-    resources:
-      limits:
-        cpu: 300m
-        memory: 256Mi
-      requests:
-        cpu: 100m
-        memory: 128Mi
-    livenessProbe:
-      enabled: false
-    readinessProbe:
+    hpa:
       enabled: false
