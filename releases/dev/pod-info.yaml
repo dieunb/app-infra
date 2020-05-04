@@ -17,3 +17,10 @@ spec:
       repository: stefanprodan/podinfo
       tag: 3.2.3
     replicaCount: 1
+    resources:
+      limits:
+        cpu: 200m
+        memory: 64Mi
+      requests:
+        cpu: 100m
+        memory: 32Mi
