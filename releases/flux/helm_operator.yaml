@@ -72,7 +72,7 @@ spec:
       enabled: false
       image:
         repository: gcr.io/kubernetes-helm/tiller
-        tag: v2.16.1
+        tag: v2.16.6
       storage: secret
 
     # For charts stored in Helm repositories other than stable
