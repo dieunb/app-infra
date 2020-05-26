@@ -3,11 +3,10 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: podinfo
-  namespace: prod
+  namespace: devops
   annotations:
     flux.weave.works/automated: "true"
     fluxcd.io/automated: "true"
-    fluxcd.io/tag.chart-image: semver:~3.1
 spec:
   releaseName: podinfo
   chart:
