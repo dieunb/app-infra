@@ -11,7 +11,7 @@ metadata:
 spec:
   releaseName: podinfo
   chart:
-    git: https://github.com/dieunb/app-infra
+    git: git@github.com:dieunb/app-infra.git
     ref: master
     path: charts/podinfo
   values:
