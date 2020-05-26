@@ -16,12 +16,12 @@ spec:
   values:
     image:
       repository: stefanprodan/podinfo
-      tag: 3.1.0
+      tag: 3.1.5
     service:
       enabled: true
       type: ClusterIP
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: "kong"
+        kubernetes.io/ingress.class: kong
       path: /podinfo
