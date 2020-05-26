@@ -5,12 +5,13 @@ metadata:
   name: podinfo
   namespace: prod
   annotations:
+    flux.weave.works/automated: "true"
     fluxcd.io/automated: "true"
     fluxcd.io/tag.chart-image: semver:~3.1
 spec:
   releaseName: podinfo
   chart:
-    git: git@github.com:dieunb/app-infra
+    git: https://github.com/dieunb/app-infra
     ref: master
     path: charts/podinfo
   values:
