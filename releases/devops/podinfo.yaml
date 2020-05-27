@@ -20,8 +20,3 @@ spec:
     service:
       enabled: true
       type: ClusterIP
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: kong
-      path: /podinfo

@@ -68,7 +68,6 @@ metadata:
   name: api-proxy
   namespace: default
   annotations:
-    kubernetes.io/ingress.class: kong
     konghq.com/plugins: api-proxy-rate-limiting
 spec:
   rules:
