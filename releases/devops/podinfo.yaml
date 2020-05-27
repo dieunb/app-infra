@@ -20,6 +20,7 @@ spec:
     service:
       enabled: true
       type: ClusterIP
+      httpPort: 80
     ingress:
       enabled: true
       annotations:
