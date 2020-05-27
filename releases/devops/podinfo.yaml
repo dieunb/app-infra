@@ -5,8 +5,7 @@ metadata:
   name: podinfo
   namespace: devops
   annotations:
-    flux.weave.works/automated: "true"
-    fluxcd.io/automated: "true"
+    fluxcd.io/automated: "false"
 spec:
   releaseName: podinfo
   chart:
@@ -18,11 +17,5 @@ spec:
       repository: stefanprodan/podinfo
       tag: multiarch
     service:
-      enabled: true
+      enabled: false
       type: ClusterIP
-      httpPort: 80
-    ingress:
-      enabled: true
-      annotations:
-        kubernetes.io/ingress.class: kong
-      path: /podinfo
