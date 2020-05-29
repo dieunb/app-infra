@@ -17,5 +17,5 @@ spec:
       repository: stefanprodan/podinfo
       tag: multiarch
     service:
-      enabled: false
+      enabled: true
       type: ClusterIP
