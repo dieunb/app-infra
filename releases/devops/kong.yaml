@@ -72,7 +72,7 @@ spec:
     # Specify Kong's Docker image and repository details here
     image:
       repository: kong
-      tag: "1.0-centos"
+      tag: "2.0.4-centos"
       # kong-enterprise-k8s image (Kong OSS + Enterprise plugins)
       # repository: kong-docker-kong-enterprise-k8s.bintray.io/kong-enterprise-k8s
       # tag: "2.0.2.0-alpine"
