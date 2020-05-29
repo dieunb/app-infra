@@ -5,7 +5,7 @@ metadata:
   name: postgres
   namespace: stateful
   annotations:
-    flux.weave.works/automated: "true"
+    flux.weave.works/automated: "false"
 spec:
   releaseName: postgres
   chart:
