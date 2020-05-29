@@ -6,7 +6,7 @@ metadata:
   namespace: devops
   annotations:
     flux.weave.works/automated: "true"
-    fluxcd.io/tag.app: semver:~2.0
+    fluxcd.io/tag.proxy: semver:~2.0
 spec:
   releaseName: kong-gateway
   chart:
