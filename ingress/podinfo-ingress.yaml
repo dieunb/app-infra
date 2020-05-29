@@ -22,6 +22,34 @@ config:
 plugin: cors
 ---
 apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: podinfo-basic-auth
+  namespace: devops
+config:
+  hide_credentials: true
+plugin: basic-auth
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: devops-consumer-secret
+  namespace: devops
+type: Opaque
+data:
+  kongCredType: YmFzaWMtYXV0aAo=
+  key: YmFzaWMtYXV0aAo=
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongConsumer
+metadata:
+  name: devops
+  namespace: devops
+username: devops
+credentials:
+  - podinfo-basic-auth
+---
+apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
   name: podinfo-ki
@@ -51,7 +79,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: kong
     konghq.com/override: podinfo-ki
-    konghq.com/plugins: podinfo-cors
+    konghq.com/plugins: podinfo-cors,podinfo-basic-auth
 spec:
   rules:
   - http:
