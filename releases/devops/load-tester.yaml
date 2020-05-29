@@ -9,7 +9,7 @@ spec:
   releaseName: load-tester
   chart:
     repository: https://flagger.app
-    name: 0.16.0
-    version: flagger/loadtester
+    name: flagger/loadtester
+    version: 0.16.0
   values:
     fullnameOverride: load-tester
