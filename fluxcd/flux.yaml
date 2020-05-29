@@ -186,7 +186,7 @@ registry:
     configFileName: /dockercfg/config.json
 
 memcached:
-  enabled: false
+  enabled: true
   hostnameOverride:
   repository: memcached
   tag: 1.5.20
