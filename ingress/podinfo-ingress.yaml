@@ -37,17 +37,18 @@ metadata:
   namespace: devops
 type: Opaque
 data:
-  kongCredType: YmFzaWMtYXV0aAo=
-  key: YmFzaWMtYXV0aAo=
+  kongCredType: YmFzaWMtYXV0aA==
+  username: YmFzaWMtYXV0aA==
+  password: YmFzaWMtYXV0aA==
 ---
 apiVersion: configuration.konghq.com/v1
 kind: KongConsumer
 metadata:
-  name: devops
+  name: devops-consumer
   namespace: devops
 username: devops
 credentials:
-  - podinfo-basic-auth
+  - devops-consumer-secret
 ---
 apiVersion: configuration.konghq.com/v1
 kind: KongIngress
