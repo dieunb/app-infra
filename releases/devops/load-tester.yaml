@@ -8,8 +8,8 @@ metadata:
 spec:
   releaseName: load-tester
   chart:
-    git: https://github.com/weaveworks/flagger
-    ref: 1.0.0-rc.1
-    path: charts/loadtester
+    repository: https://flagger.app
+    name: 0.16.0
+    version: flagger/loadtester
   values:
     fullnameOverride: load-tester
