@@ -11,5 +11,5 @@ spec:
       paths:
       - path: /kong
         backend:
-          serviceName: kong-kong-stg-proxy
+          serviceName: kong-gateway-kong-admin
           servicePort: 8001
