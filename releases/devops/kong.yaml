@@ -96,7 +96,7 @@ spec:
       # Disabling this is recommended for most ingress controller configurations
       # Enterprise users that wish to use Kong Manager with the controller should enable this
       enabled: true
-      type: ClusterIP
+      type: ClusterIP # NodePort
       # If you want to specify annotations for the admin service, uncomment the following
       # line, add additional or adjust as needed, and remove the curly braces after 'annotations:'.
       annotations: {}
