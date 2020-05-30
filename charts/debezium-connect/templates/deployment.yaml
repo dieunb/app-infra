@@ -1,0 +1,47 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+    app: {{ template "fullname" . }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+    heritage: "{{ .Release.Service }}"
+spec:
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      containers:
+        - name: {{ template "fullname" . }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: GROUP_ID
+              value: {{ .Values.config.groupId | quote}}
+            - name: CONFIG_STORAGE_TOPIC
+              value: {{ .Values.config.configStorageTopic }}
+            - name: OFFSET_STORAGE_TOPIC
+              value: {{ .Values.config.offsetStorageTopic }}
+            - name: BOOTSTRAP_SERVERS
+              value: {{ .Values.config.bootstrapServers }}
+            {{- range $key, $value := $.Values.env }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+            {{- end }}
+          ports:
+            - containerPort: {{ .Values.service.internalPort }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- if $.Values.secretFiles }}
+          volumeMounts:
+          - name: "kubestore"
+            mountPath: "/etc/kubestore"
+            readOnly: true
+      volumes:
+      - name: "kubestore"
+        secret:
+          secretName: {{ template "fullname" . }}-files
+      {{- end }}
