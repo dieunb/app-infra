@@ -95,8 +95,8 @@ spec:
       # Enable creating a Kubernetes service for the admin API
       # Disabling this is recommended for most ingress controller configurations
       # Enterprise users that wish to use Kong Manager with the controller should enable this
-      enabled: false
-      type: NodePort
+      enabled: true
+      type: ClusterIP
       # If you want to specify annotations for the admin service, uncomment the following
       # line, add additional or adjust as needed, and remove the curly braces after 'annotations:'.
       annotations: {}
