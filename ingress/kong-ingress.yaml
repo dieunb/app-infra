@@ -1,9 +1,31 @@
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: kong-ki
+  namespace: devops
+route:
+  methods:
+    - POST
+    - GET
+    - PUT
+    - PATCH
+    - OPTION
+    - HEAD
+  regex_priority: 0
+  strip_path: true
+  preserve_host: false
+  protocols:
+    - http
+    - https
+---
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kong-ingress
   namespace: devops
   annotations:
+    konghq.com/override: kong-ki
     kubernetes.io/ingress.class: kong
 spec:
   rules:
