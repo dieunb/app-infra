@@ -40,7 +40,7 @@ spec:
     #   ssl_key_path:
     #   ssl_crt_path:
     #   konga_hook_timeout: 60000
-    #   db_adapter: postgres
+      db_adapter: ""
     #   db_uri:
     #   db_host: localhost
     #   db_port: 5432
