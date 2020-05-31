@@ -37,8 +37,8 @@ spec:
       no_auth: true
     #   port: 1337
       node_env: development
-    #   ssl_key_path:
-    #   ssl_crt_path:
+      ssl_key_path: ""
+      ssl_crt_path: ""
     #   konga_hook_timeout: 60000
       db_adapter: ""
     #   db_uri:
