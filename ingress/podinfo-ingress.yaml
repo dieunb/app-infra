@@ -90,7 +90,7 @@ metadata:
 #    appinsights.monitor.stakater.com/frequency: "900"
 spec:
   rules:
-    - host: https://google.com
+    - host: medium.com
       http:
         paths:
         - path: /podinfo
