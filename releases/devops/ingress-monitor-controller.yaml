@@ -28,6 +28,7 @@ spec:
         group: com.stakater.platform
         provider: stakater
       deployment:
+        apiVersion: apps/v1
         labels:
           version: "v1.0.98"
         annotations:
