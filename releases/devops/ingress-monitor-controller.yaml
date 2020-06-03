@@ -19,7 +19,7 @@ spec:
     ingressMonitorController:
       tolerations: {}
       watchNamespace: ""
-      mount: "secret"
+      mount: "configMap"
       existingSecret: ""
       useFullName: false
       logLevel: info
@@ -28,7 +28,6 @@ spec:
         group: com.stakater.platform
         provider: stakater
       deployment:
-        apiVersion: extensions/v1beta1
         labels:
           version: "v1.0.98"
         annotations:
