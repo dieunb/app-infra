@@ -82,9 +82,9 @@ metadata:
     konghq.com/override: podinfo-ki
     konghq.com/plugins: podinfo-cors,podinfo-basic-auth
     monitor.stakater.com/enabled: "true"
-#    monitor.stakater.com/healthEndpoint: "/api/status"
+    monitor.stakater.com/healthEndpoint: "/"
 #    monitor.stakater.com/name: "Pod info"
-#    monitor.stakater.com/forceHttps: "true"
+    monitor.stakater.com/forceHttps: "true"
 #    appinsights.monitor.stakater.com/statuscode: "200"
 #    appinsights.monitor.stakater.com/retryenable: "false"
 #    appinsights.monitor.stakater.com/frequency: "900"
