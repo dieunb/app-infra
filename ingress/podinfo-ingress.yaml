@@ -90,9 +90,10 @@ metadata:
 #    appinsights.monitor.stakater.com/frequency: "900"
 spec:
   rules:
-  - http:
-      paths:
-      - path: /podinfo
-        backend:
-          serviceName: podinfo
-          servicePort: 8989
+    - host: https://google.com
+      http:
+        paths:
+        - path: /podinfo
+          backend:
+            serviceName: podinfo
+            servicePort: 8989
