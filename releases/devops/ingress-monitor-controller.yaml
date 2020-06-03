@@ -20,7 +20,7 @@ spec:
       tolerations: {}
       watchNamespace: ""
       mount: "secret"
-      existingSecret: "ingress-monitor-controller-provider"
+      existingSecret: ""
       useFullName: false
       logLevel: info
       logFormat: text
