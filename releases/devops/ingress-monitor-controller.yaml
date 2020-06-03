@@ -11,7 +11,7 @@ spec:
   chart:
     repository: https://stakater.github.io/stakater-charts/
     name: ingressmonitorcontroller
-    version: 1.0.92
+    version: 1.0.98
   values:
     kubernetes:
       host: https://kubernetes.default
