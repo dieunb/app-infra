@@ -1,0 +1,71 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: ingress-monitor-controller
+  namespace: devops
+  annotations:
+    flux.weave.works/automated: "false"
+spec:
+  releaseName: ingress-monior-controller
+  chart:
+    repository: https://stakater.github.io/stakater-charts/
+    name: ingressmonitorcontroller
+    version: 1.0.92
+  values:
+    kubernetes:
+      host: https://kubernetes.default
+
+    ingressMonitorController:
+      tolerations: {}
+      watchNamespace: ""
+      mount: "secret"
+      existingSecret: "ingress-monitor-controller-provider"
+      useFullName: false
+      logLevel: info
+      logFormat: text
+      matchLabels:
+        group: com.stakater.platform
+        provider: stakater
+      deployment:
+        labels:
+          version: "v1.0.98"
+        annotations:
+          configmap.reloader.stakater.com/reload: ingressmonitorcontroller
+      config:
+        labels:
+          version: "v1.0.98"
+      rbac:
+        create: true
+      # Service account config for the agent pods
+      serviceAccount:
+        # Specifies whether a ServiceAccount should be created
+        create: true
+        labels:
+          version: "v1.0.98"
+        # The name of the ServiceAccount to use.
+        # If not set and create is true, a name is generated using the fullname template
+        name: ingressmonitorcontroller
+      image:
+        name: stakater/ingressmonitorcontroller
+        tag: "v1.0.98"
+        pullPolicy: IfNotPresent
+      configFilePath: /etc/IngressMonitorController/config.yaml
+      data:
+        config.yaml: |-
+          providers:
+            - name: PingdomMulti
+              apiURL: "https://api.pingdom.com/v2/"
+              apiKey: "cntqkm8b5blpykuntgfsg87notg8dtiz"
+              username: "dieu.nguyen@employmenthero.com"
+              password: "123456@!"
+              accountEmail: "multi@test.com"
+              alertContacts: "0544483_0_0-2628365_0_0-2633263_0_0"
+              alertIntegrations: "91166,10924"
+          enableMonitorDeletion: true
+          monitorNameTemplate: "{{.Namespace}}-{{.IngressName}}"
+          # how often (in seconds) monitors should be synced to their Kubernetes resources (0 = disabled)
+          resyncPeriod: 0
+          # creationDelay is a duration string to add a delay before creating new monitor (e.g., to allow DNS to catch up first)
+          # https://golang.org/pkg/time/#ParseDuration
+          creationDelay: 0
