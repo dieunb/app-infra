@@ -81,7 +81,7 @@ metadata:
     kubernetes.io/ingress.class: kong
     konghq.com/override: podinfo-ki
     konghq.com/plugins: podinfo-cors,podinfo-basic-auth
-    monitor.stakater.com/enabled": "true"
+    monitor.stakater.com/enabled: "true"
 #    monitor.stakater.com/healthEndpoint: "/api/status"
 #    monitor.stakater.com/name: "Pod info"
 #    monitor.stakater.com/forceHttps: "true"
