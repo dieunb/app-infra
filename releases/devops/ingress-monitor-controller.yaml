@@ -54,7 +54,7 @@ spec:
       data:
         config.yaml: |-
           providers:
-            - name: PingdomMulti
+            - name: Pingdom
               apiURL: "https://api.pingdom.com/v2/"
               apiKey: "cntqkm8b5blpykuntgfsg87notg8dtiz"
               username: "dieu.nguyen@employmenthero.com"
