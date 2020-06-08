@@ -13,6 +13,7 @@ spec:
     ref: master
     path: charts/podinfo
   values:
+    replicaCount: 0
     image:
       repository: stefanprodan/podinfo
       tag: multiarch
