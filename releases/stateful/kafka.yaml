@@ -102,13 +102,11 @@ spec:
 
     ## The address(es) the socket server listens on.
     ##
-    listeners:
-      - PLAINTEXT://0.0.0.0:9092
+    listeners: []
 
     ## The address(es) (hostname:port) the broker will advertise to producers and consumers.
     ##
-    advertisedListeners:
-      - PLAINTEXT://0.0.0.0:9092
+    advertisedListeners: []
 
     ## The protocol->listener mapping
     ## Example:
@@ -222,7 +220,7 @@ spec:
     ## Disable server host name verification by setting it to an empty string
     ## See: https://docs.confluent.io/current/kafka/authentication_ssl.html#optional-settings
     ##
-    sslEndpointIdentificationAlgorithm: https
+    sslEndpointIdentificationAlgorithm: "" #https
 
     ## All the parameters from the configuration file can be overwritten by using environment variables with this format: KAFKA_CFG_{KEY}
     ## ref: https://github.com/bitnami/bitnami-docker-kafka#configuration
@@ -357,8 +355,8 @@ spec:
       # resources, such as Minikube. If you do want to specify resources, uncomment the following
       # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
       limits:
-        cpu: 200m
-        memory: 500Mi
+        cpu: 250m
+        memory: 1Gi
       requests:
         cpu: 100m
         memory: 256Mi
