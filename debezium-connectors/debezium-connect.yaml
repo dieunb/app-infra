@@ -2,6 +2,7 @@ apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaConnect
 metadata:
   name: debezium-connect
+  namespace: devops
   annotations:
   # use-connector-resources configures this KafkaConnect
   # to use KafkaConnector resources to avoid
