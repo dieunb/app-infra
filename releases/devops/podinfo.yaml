@@ -20,3 +20,4 @@ spec:
     service:
       enabled: true
       type: ClusterIP
+
