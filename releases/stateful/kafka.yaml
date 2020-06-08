@@ -89,9 +89,7 @@ spec:
     ##   zookeeper.connection.timeout.ms=6000
     ##   group.initial.rebalance.delay.ms=0
     ##
-    config: |-
-      listeners=PLAINTEXT://0.0.0.0:9092
-      advertised.listeners=PLAINTEXT://0.0.0.0:9092
+    # config:
 
     ## ConfigMap with Kafka Configuration
     ## NOTE: This will override config
@@ -104,11 +102,13 @@ spec:
 
     ## The address(es) the socket server listens on.
     ##
-    listeners: []
+    listeners:
+      - PLAINTEXT://0.0.0.0:9092
 
     ## The address(es) (hostname:port) the broker will advertise to producers and consumers.
     ##
-    advertisedListeners: []
+    advertisedListeners:
+      - PLAINTEXT://0.0.0.0:9092
 
     ## The protocol->listener mapping
     ## Example:
