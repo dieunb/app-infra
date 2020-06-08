@@ -9,7 +9,7 @@ metadata:
 spec:
   releaseName: strimzi-cluster-operator
   chart:
-    repository: https://strimzi.io/charts/strimzi
+    repository: https://strimzi.io/charts
     name: strimzi-kafka-operator
     version: 0.18.0
   values:
