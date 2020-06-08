@@ -16,6 +16,13 @@ spec:
   #  trustedCertificates:
   #    - secretName: my-cluster-cluster-ca-cert
   #      certificate: ca.crt
+  resources:
+    requests:
+      cpu: 0.3
+      memory: 512Mi
+    limits:
+      cpu: 0.5
+      memory: 1Gi
   config:
     group.id: connect-cluster
     offset.storage.topic: my-connect-cluster-offsets
