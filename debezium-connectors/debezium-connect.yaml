@@ -18,10 +18,10 @@ spec:
   #      certificate: ca.crt
   resources:
     requests:
-      cpu: 0.3
+      cpu: 250m
       memory: 512Mi
     limits:
-      cpu: 0.5
+      cpu: 500m
       memory: 1Gi
   config:
     group.id: connect-cluster
