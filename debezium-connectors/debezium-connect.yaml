@@ -1,0 +1,67 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaConnect
+metadata:
+  name: debezium-connect
+  annotations:
+  # use-connector-resources configures this KafkaConnect
+  # to use KafkaConnector resources to avoid
+  # needing to call the Connect REST API directly
+    strimzi.io/use-connector-resources: "true"
+spec:
+  image: ehdevops/debezium-connect:latest
+  replicas: 1
+  bootstrapServers: kafka.stateful:9092
+  tls: {}
+  #  trustedCertificates:
+  #    - secretName: my-cluster-cluster-ca-cert
+  #      certificate: ca.crt
+  config:
+    config.storage.replication.factor: 1
+    offset.storage.replication.factor: 1
+    status.storage.replication.factor: 1
+    config.providers: file
+    config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider
+  externalConfiguration:
+    volumes:
+      - name: connector-config
+        secret:
+          secretName: db-secret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: db-secret
+  namespace: devops
+data:
+  debezium-pg-credentials.properties: cGdfdXNlcm5hbWU6IGtvbmcKcGdfcGFzc3dvcmQ6IGtvbmcK
+---
+apiVersion: kafka.strimzi.io/v1alpha1
+kind: KafkaConnector
+metadata:
+  name: kong-connector-source
+  labels:
+    strimzi.io/cluster: stg-cluster
+spec:
+  class: io.debezium.connector.postgresql.PostgresConnector
+  tasksMax: 1
+  config:
+    database.hostname: postgres-postgresql.stateful.svc.cluster.local
+    database.port: "5432"
+    database.user: "${file:/opt/kafka/external-configuration/connector-config/debezium-pg-credentials.properties:pg_username}"
+    database.password: "${file:/opt/kafka/external-configuration/connector-config/debezium-pg-credentials.properties:pg_password}"
+    database.dbname: "kong"
+    database.server.name: "kong"
+    database.history.kafka.bootstrap.servers: "kafka.stateful:9092"
+    database.history.kafka.topic: "schema-changes.inventory"
+    include.schema.changes: "true"
+    slot.name: "external_auth_stg_source_pg_connector"
+    tasks.max: "1"
+    plugin.name": "wal2json"
+    table.whitelist: "public.services"
+    key.converter.schemas.enable: "true"
+    value.converter.schemas.enable: "true"
+    value.converter: "org.apache.kafka.connect.json.JsonConverter"
+    key.converter: "org.apache.kafka.connect.json.JsonConverter"
+
+
+
