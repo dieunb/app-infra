@@ -11,7 +11,7 @@ spec:
   chart:
     repository: https://charts.bitnami.com/bitnami
     name: kafka
-    version: 10.3.3
+    version: 11.1.1
   values:
     ## Global Docker image parameters
     ## Please, note that this will override the image parameters, including dependencies, configured to use the global value
