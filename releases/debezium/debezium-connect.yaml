@@ -32,9 +32,9 @@ spec:
     value.converter: org.apache.kafka.connect.json.JsonConverter
     key.converter.schemas.enable: true
     value.converter.schemas.enable: true
-    config.storage.replication.factor: 3
-    offset.storage.replication.factor: 3
-    status.storage.replication.factor: 3
+    config.storage.replication.factor: 1
+    offset.storage.replication.factor: 1
+    status.storage.replication.factor: 1
     config.providers: file
     config.providers.file.class: org.apache.kafka.common.config.provider.FileConfigProvider
   externalConfiguration:
