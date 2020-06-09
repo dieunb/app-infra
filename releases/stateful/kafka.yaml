@@ -220,7 +220,7 @@ spec:
     ## Disable server host name verification by setting it to an empty string
     ## See: https://docs.confluent.io/current/kafka/authentication_ssl.html#optional-settings
     ##
-    sslEndpointIdentificationAlgorithm: "" #https
+    sslEndpointIdentificationAlgorithm: https
 
     ## All the parameters from the configuration file can be overwritten by using environment variables with this format: KAFKA_CFG_{KEY}
     ## ref: https://github.com/bitnami/bitnami-docker-kafka#configuration
@@ -357,9 +357,9 @@ spec:
       limits:
         cpu: 250m
         memory: 1Gi
-      requests:
-        cpu: 100m
-        memory: 256Mi
+      requests: {}
+      #   cpu: 250m
+      #   memory: 256Mi
 
     ## Kafka containers' liveness and readiness probes. Evaluated as a template.
     ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
