@@ -186,7 +186,7 @@ spec:
       walLevel: logical
       maxWalSenders: 1
       maxReplicationSlots: 1
-      listenAddresses: '*'
+      listenAddresses: "'*'"
       sharedPreloadLibraries: 'decoderbufs'
 
     ## PostgreSQL extended configuration
