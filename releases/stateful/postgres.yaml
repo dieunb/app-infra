@@ -182,7 +182,12 @@ spec:
     ## Alternatively, you can put your postgresql.conf under the files/ directory
     ## ref: https://www.postgresql.org/docs/current/static/runtime-config.html
     ##
-    postgresqlConfiguration: {"walLevel": "logical", "maxWalSenders": "1", "maxReplicationSlots": "1"}
+    postgresqlConfiguration:
+      walLevel: logical
+      maxWalSenders: 1
+      maxReplicationSlots: 1
+      listenAddresses: '*'
+      sharedPreloadLibraries: 'decoderbufs,wal2json'
 
     ## PostgreSQL extended configuration
     ## As above, but _appended_ to the main configuration
@@ -198,6 +203,7 @@ spec:
     pgHbaConfiguration: |-
       local all all trust
       host all all localhost trust
+      host all all 0.0.0.0/0 md5
     #   host mydatabase mysuser 192.168.0.0/24 md5
 
     ## ConfigMap with PostgreSQL configuration
