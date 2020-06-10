@@ -29,7 +29,7 @@ spec:
     ##
     image:
       registry: docker.io
-      repository: bitnami/postgresql
+      repository: dieunb/postgresql
       tag: 11
       ## Specify a imagePullPolicy
       ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
@@ -187,7 +187,7 @@ spec:
       maxWalSenders: 1
       maxReplicationSlots: 1
       listenAddresses: '*'
-      sharedPreloadLibraries: 'decoderbufs,wal2json'
+      sharedPreloadLibraries: 'decoderbufs'
 
     ## PostgreSQL extended configuration
     ## As above, but _appended_ to the main configuration
