@@ -47,8 +47,8 @@ spec:
         # If not set and create is true, a name is generated using the fullname template
         name: ingressmonitorcontroller
       image:
-        name: stakater/ingressmonitorcontroller
-        tag: "v1.0.98"
+        name: dieunb/ingressmonitorcontroller
+        tag: "dev"
         pullPolicy: IfNotPresent
       configFilePath: /etc/IngressMonitorController/config.yaml
       data:
