@@ -18,7 +18,7 @@ spec:
 
     ingressMonitorController:
       tolerations: {}
-      watchNamespace: ""
+      watchNamespace: "devops,stateful"
       mount: "secret"
       existingSecret: "ingress-monitor-controller-secret"
       useFullName: false
