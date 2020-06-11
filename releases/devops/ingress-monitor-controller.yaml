@@ -20,7 +20,7 @@ spec:
       tolerations: {}
       watchNamespace: ""
       mount: "secret"
-      existingSecret: ""
+      existingSecret: "ingress-monitor-controller-secret"
       useFullName: false
       logLevel: info
       logFormat: text
@@ -51,17 +51,4 @@ spec:
         tag: "dev2"
         pullPolicy: IfNotPresent
       configFilePath: /etc/IngressMonitorController/config.yaml
-      data:
-        config.yaml: |-
-          providers:
-            - name: Pingdom
-              apiKey: "sdaN9K_8ACkRjlOgImz8BT47WJf3URsJS6D1o4A-uM5siIn6AcKVYjqJok8XF5d58tTmZoo"
-              alertContacts: "14512428"
-              alertIntegrations: "91166,10924"
-          enableMonitorDeletion: true
-          monitorNameTemplate: "{{.Namespace}}-{{.IngressName}}"
-          # how often (in seconds) monitors should be synced to their Kubernetes resources (0 = disabled)
-          resyncPeriod: 60
-          # creationDelay is a duration string to add a delay before creating new monitor (e.g., to allow DNS to catch up first)
-          # https://golang.org/pkg/time/#ParseDuration
-          creationDelay: 0
+      data: {}
