@@ -49,7 +49,7 @@ metadata:
   name: db-secret
   namespace: devops
 data:
-  debezium-pg-credentials.properties: cGdfdXNlcm5hbWU6IHBvc3RncmVzCnBnX3Bhc3N3b3JkOiBwb3N0Z3Jlcwo=
+  debezium-pg-credentials.properties: cGdfdXNlcm5hbWU6IGtvbmcKcGdfcGFzc3dvcmQ6IGtvbmcK
 ---
 apiVersion: kafka.strimzi.io/v1alpha1
 kind: KafkaConnector
