@@ -73,7 +73,7 @@ spec:
     include.schema.changes: "true"
     slot.name: "external_auth_stg_source_pg_connector"
     tasks.max: "1"
-    plugin.name: "decoderbufs"
+    plugin.name: "pgoutput"
     table.whitelist: "public.services"
     key.converter.schemas.enable: "true"
     value.converter.schemas.enable: "true"
