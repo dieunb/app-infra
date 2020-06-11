@@ -55,10 +55,10 @@ spec:
         config.yaml: |-
           providers:
             - name: Pingdom
-              apiURL: "https://api.pingdom.com/v2/"
-              apiKey: "cntqkm8b5blpykuntgfsg87notg8dtiz"
-              username: "dieu.nguyen@employmenthero.com"
-              password: "123456@!"
+              apiURL: "https://api.pingdom.com/api/3.1/"
+              apiKey: "sdaN9K_8ACkRjlOgImz8BT47WJf3URsJS6D1o4A-uM5siIn6AcKVYjqJok8XF5d58tTmZoo"
+              username: ""
+              password: ""
               accountEmail: "multi@test.com"
               alertContacts: "0544483_0_0-2628365_0_0-2633263_0_0"
               alertIntegrations: "91166,10924"
