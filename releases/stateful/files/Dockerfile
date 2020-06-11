@@ -1,4 +1,4 @@
-FROM bitnami/postgresql:11 as build
+FROM bitnami/postgresql:11
 
 ENV PG_MAJOR=11
 ENV PLUGIN_VERSION=v1.1.2.Final
@@ -33,5 +33,4 @@ RUN git clone https://github.com/eulerto/wal2json -b master --single-branch \
     && cd / \
     && rm -rf wal2json
 
-FROM bitnami/postgresql:11
-
+USER 1001
