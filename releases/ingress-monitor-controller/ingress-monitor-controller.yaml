@@ -22,7 +22,7 @@ spec:
       mount: "secret"
       existingSecret: "ingress-monitor-controller-secret"
       useFullName: false
-      logLevel: info
+      logLevel: WARN
       logFormat: text
       matchLabels:
         group: com.stakater.platform
