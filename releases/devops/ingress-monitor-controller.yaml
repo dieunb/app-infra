@@ -48,7 +48,7 @@ spec:
         name: ingressmonitorcontroller
       image:
         name: dieunb/ingressmonitorcontroller
-        tag: "dev"
+        tag: "dev1"
         pullPolicy: IfNotPresent
       configFilePath: /etc/IngressMonitorController/config.yaml
       data:
