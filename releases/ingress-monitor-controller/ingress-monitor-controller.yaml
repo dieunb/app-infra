@@ -20,7 +20,7 @@ spec:
       mount: "secret"
       existingSecret: "ingress-monitor-controller-secret"
       useFullName: false
-      logLevel: info
+      logLevel: warn
       logFormat: text
       image:
         name: dieunb/ingressmonitorcontroller
