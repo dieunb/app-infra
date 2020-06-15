@@ -448,7 +448,7 @@ spec:
     podAnnotations: {}
 
     # Kong pod count
-    replicaCount: 0
+    replicaCount: 1
 
     # Annotations to be added to Kong deployment
     deploymentAnnotations:
