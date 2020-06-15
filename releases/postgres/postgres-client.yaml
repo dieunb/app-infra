@@ -1,0 +1,20 @@
+# kubectl create deployment postgres-client --image=tmaier/postgresql-client:latest
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-client
+  labels:
+    app: postgres-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres-client
+  template:
+    metadata:
+      labels:
+        app: postgres-client
+    spec:
+      containers:
+      - name: postgres-client
+        image: tmaier/postgresql-client
