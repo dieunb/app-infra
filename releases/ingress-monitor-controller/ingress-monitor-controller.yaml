@@ -24,7 +24,6 @@ spec:
       logFormat: text
       image:
         name: dieunb/ingressmonitorcontroller
-        tag: "dev3"
+        tag: "dev4"
         pullPolicy: IfNotPresent
-      configFilePath: /etc/IngressMonitorController/config.yaml
       data: {}
