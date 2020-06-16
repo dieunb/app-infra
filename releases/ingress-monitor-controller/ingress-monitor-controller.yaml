@@ -16,11 +16,11 @@ spec:
     nameOverride: "ingress-monitor-controller"
     ingressMonitorController:
       tolerations: {}
-      watchNamespace: ""
+      watchNamespace: "devops"
       mount: "secret"
       existingSecret: "ingress-monitor-controller-secret"
       useFullName: false
-      logLevel: warn
+      logLevel: error
       logFormat: text
       image:
         name: dieunb/ingressmonitorcontroller
