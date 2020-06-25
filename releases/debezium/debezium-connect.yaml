@@ -9,7 +9,7 @@ metadata:
   # needing to call the Connect REST API directly
     strimzi.io/use-connector-resources: "true"
 spec:
-  image: dieunb/debezium-connect
+  image: dieunb/debezium-connect:latest
   replicas: 1
   bootstrapServers: kafka-0.kafka-headless.stateful.svc.cluster.local:9092
   #tls: {}
