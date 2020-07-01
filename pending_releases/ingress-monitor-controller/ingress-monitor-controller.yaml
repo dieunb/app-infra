@@ -24,6 +24,6 @@ spec:
       logFormat: text
       image:
         name: dieunb/ingressmonitorcontroller
-        tag: "dev4"
+        tag: "dev5"
         pullPolicy: IfNotPresent
       data: {}
