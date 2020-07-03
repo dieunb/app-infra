@@ -21,7 +21,7 @@ spec:
       cpu: 250m
       memory: 512Mi
     limits:
-      cpu: 250m
+      cpu: 500m
       memory: 1Gi
   config:
     group.id: connect-cluster
@@ -42,6 +42,7 @@ spec:
       - name: connector-config
         secret:
           secretName: db-secret
+    env: []
 ---
 apiVersion: v1
 kind: Secret
