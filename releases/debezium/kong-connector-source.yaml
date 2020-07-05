@@ -9,7 +9,7 @@ metadata:
 spec:
   class: io.debezium.connector.postgresql.PostgresConnector
   tasksMax: 1
-  pause: true
+  pause: false
   config:
     database.hostname: "postgres-postgresql.stateful.svc.cluster.local"
     database.port: "5432"
