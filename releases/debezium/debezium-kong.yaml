@@ -1,0 +1,36 @@
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: debezium-ki
+  namespace: devops
+route:
+  methods:
+    - GET
+  regex_priority: 0
+  strip_path: true
+  preserve_host: false
+  protocols:
+    - http
+    - https
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: debezium-connect-ingress
+  namespace: devops
+  annotations:
+    kubernetes.io/ingress.class: kong
+    #konghq.com/override: debezium-ki
+  labels:
+    strimzi.io/cluster: debezium
+    strimzi.io/kind: KafkaConnect
+    strimzi.io/name: debezium-connect
+spec:
+  rules:
+    - http:
+        paths:
+          - path: "/debezium"
+            backend:
+              serviceName: debezium-connect-api
+              servicePort: 8083
