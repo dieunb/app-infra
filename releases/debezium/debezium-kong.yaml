@@ -21,7 +21,7 @@ metadata:
   namespace: devops
   annotations:
     kubernetes.io/ingress.class: kong
-    #konghq.com/override: debezium-ki
+    konghq.com/override: debezium-ki
   labels:
     strimzi.io/cluster: debezium
     strimzi.io/kind: KafkaConnect
