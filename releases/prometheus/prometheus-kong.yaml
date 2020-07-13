@@ -1,0 +1,37 @@
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: prometheus-ki
+  namespace: devops
+route:
+  methods:
+    - POST
+    - GET
+    - PUT
+    - PATCH
+    - OPTION
+    - HEAD
+  regex_priority: 0
+  strip_path: true
+  preserve_host: false
+  protocols:
+    - http
+    - https
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: prometheus-ingress
+  namespace: devops
+  annotations:
+    konghq.com/override: prometheus-ki
+    kubernetes.io/ingress.class: kong
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /prometheus
+        backend:
+          serviceName: prometheus
+          servicePort: 9100
