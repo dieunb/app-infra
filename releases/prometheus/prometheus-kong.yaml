@@ -15,8 +15,8 @@ route:
   regex_priority: 0
   strip_path: true
   preserve_host: false
+  https_redirect_status_code: 302
   protocols:
-    - http
     - https
 proxy:
   path: /
