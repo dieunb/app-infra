@@ -3,12 +3,11 @@ apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
   name: prometheus
-  namespace: agents
+  namespace: devops
   annotations:
     flux.weave.works/automated: "false"
 spec:
   releaseName: prometheus
-  helmVersion: v3
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: prometheus
