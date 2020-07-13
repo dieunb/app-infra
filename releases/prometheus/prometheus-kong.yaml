@@ -18,6 +18,8 @@ route:
   protocols:
     - http
     - https
+proxy:
+  path: /
 ---
 apiVersion: extensions/v1beta1
 kind: Ingress
