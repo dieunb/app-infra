@@ -1,0 +1,41 @@
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: grafana-ki
+  namespace: devops
+route:
+  methods:
+    - POST
+    - GET
+    - PUT
+    - PATCH
+    - OPTION
+    - HEAD
+  regex_priority: 0
+  strip_path: true
+  preserve_host: false
+  https_redirect_status_code: 302
+  protocols:
+    - http
+    - https
+proxy:
+  path: /
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: grafana-ingress
+  namespace: devops
+  annotations:
+    konghq.com/override: grafana-ki
+    kubernetes.io/ingress.class: kong
+spec:
+  rules:
+    - host: grafana.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: grafana
+            servicePort: 80

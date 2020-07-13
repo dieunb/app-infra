@@ -12,10 +12,6 @@ spec:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: prometheus
     version: 11.7.0
-    #valuesFrom: []
-    #- secretKeyRef:
-    #    name: prometheus-vault
-    #    key: values.yaml
   values:
     rbac:
       create: true
