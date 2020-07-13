@@ -31,25 +31,38 @@ metadata:
     kubernetes.io/ingress.class: kong
 spec:
   rules:
-  - http:
-      paths:
-      - path: /prometheus-server
-        backend:
-          serviceName: prometheus-server
-          servicePort: 80
-      - path: /prometheus-alertmanager
-        backend:
-          serviceName: prometheus-alertmanager
-          servicePort: 80
-      - path: /prometheus-kube-state-metrics
-        backend:
-          serviceName: prometheus-kube-state-metrics
-          servicePort: 8080
-      - path: /prometheus-pushgateway
-        backend:
-          serviceName: prometheus-pushgateway
-          servicePort: 9091
-      - path: /prometheus-node-exporter
-        backend:
-          serviceName: prometheus-node-exporter
-          servicePort: 9100
+    - host: server.prometheus.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: prometheus-server
+            servicePort: 80
+    - host: alertmanager.prometheus.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: prometheus-alertmanager
+            servicePort: 80
+    - host: kube-state-metrics.prometheus.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: prometheus-kube-state-metrics
+            servicePort: 8080
+    - host: pushgateway.prometheus.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: prometheus-pushgateway
+            servicePort: 9091
+    - host: node-exporter.prometheus.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: prometheus-node-exporter
+            servicePort: 9100
