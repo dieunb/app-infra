@@ -3,7 +3,7 @@ apiVersion: configuration.konghq.com/v1
 kind: KongIngress
 metadata:
   name: grafana-ki
-  namespace: devops
+  namespace: monitoring
 route:
   methods:
     - POST
@@ -26,7 +26,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: grafana-ingress
-  namespace: devops
+  namespace: monitoring
   annotations:
     konghq.com/override: grafana-ki
     kubernetes.io/ingress.class: kong
