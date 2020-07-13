@@ -661,7 +661,7 @@ spec:
       ## Prometheus Kafka Exporter: exposes complimentary metrics to JMX Exporter
       ##
       kafka:
-        enabled: false
+        enabled: true
 
         ## Bitnami Kafka exporter image
         ## ref: https://hub.docker.com/r/bitnami/kafka-exporter/tags/
@@ -749,7 +749,7 @@ spec:
       ## Prometheus JMX Exporter: exposes the majority of Kafkas metrics
       ##
       jmx:
-        enabled: false
+        enabled: true
 
         ## Bitnami JMX exporter image
         ## ref: https://hub.docker.com/r/bitnami/jmx-exporter/tags/
