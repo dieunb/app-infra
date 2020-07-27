@@ -29,7 +29,7 @@ metadata:
   name: grafana-ingress
   namespace: monitoring
   annotations:
-    # konghq.com/override: grafana-ki
+    konghq.com/override: grafana-ki
     kubernetes.io/ingress.class: kong
 spec:
   rules:

@@ -133,8 +133,7 @@ spec:
       port: 80
       targetPort: 3000
         # targetPort: 4181 To be used with a proxy extraContainer
-      annotations:
-        konghq.com/override: grafana-ki
+      annotations: {}
       labels: {}
       portName: service
 
