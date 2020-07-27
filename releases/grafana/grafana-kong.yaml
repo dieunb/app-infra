@@ -18,9 +18,7 @@ route:
   https_redirect_status_code: 302
   protocols:
     - http
-    - https
 proxy:
-  path: /
   retries: 24
 ---
 apiVersion: extensions/v1beta1
