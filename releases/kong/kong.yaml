@@ -445,7 +445,9 @@ spec:
     nodeSelector: {}
 
     # Annotation to be added to Kong pods
-    podAnnotations: {}
+    podAnnotations:
+      prometheus.io/scrape: "true"
+      prometheus.io/port: "8100"
 
     # Kong pod count
     replicaCount: 1
