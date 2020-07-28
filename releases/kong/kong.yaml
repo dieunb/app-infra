@@ -43,7 +43,7 @@ spec:
       headers: "off"
       database: "postgres"
       log_level: debug
-      plugins: bundled
+      plugins: bundled,eh-authentication,mobile-force-update,eh-authorization
       pg_host:
         valueFrom:
           secretKeyRef:
