@@ -18,6 +18,7 @@ route:
   https_redirect_status_code: 302
   protocols:
     - https
+    - http
 proxy:
   path: /
 ---
