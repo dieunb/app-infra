@@ -42,7 +42,7 @@ spec:
       admin_error_log: off #/dev/stderr
       headers: "off"
       database: "postgres"
-      log_level: error
+      log_level: debug
       plugins: bundled
       pg_host:
         valueFrom:
