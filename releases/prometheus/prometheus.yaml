@@ -359,8 +359,8 @@ spec:
         ##
         extraConfigmapMounts:
           - name: kong-gateway-alerts
-            mountPath: /etc/config/configmap-alert-rules
-            subPath: "kong-gateway-alerts.yaml"
+            mountPath: /etc/config/alert-rules
+            subPath: ""
             configMap: kong-gateway-alerts
             readOnly: true
 
@@ -1204,7 +1204,7 @@ spec:
         rule_files:
           - /etc/config/recording_rules.yml
           - /etc/config/alerting_rules.yml
-          - /etc/config/configmap-alert-rules/*.yaml
+          - /etc/config/alert-rules/kong-gateway-alerts.yaml
         ## Below two files are DEPRECATED will be removed from this default values file
           - /etc/config/rules
           - /etc/config/alerts
