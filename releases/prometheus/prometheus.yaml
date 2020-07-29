@@ -623,7 +623,7 @@ spec:
         # - storage.tsdb.wal-compression
 
       ## Path to a configuration file on prometheus server container FS
-      configPath: /etc/config/prometheus.yml
+      configPath: /etc/config/prometheus-override.yml
 
       global:
         ## How frequently to scrape targets by default
@@ -668,11 +668,6 @@ spec:
         #   readOnly: true
 
       extraConfigmapMounts:
-        - name: prometheus-server
-          mountPath: ""
-          subPath: ""
-          configMap: prometheus-server-config
-          readOnly: true
         - name: kong-gateway-alerts
           mountPath: /etc/config/alert-rules
           subPath: ""
@@ -692,7 +687,7 @@ spec:
       ## Defining configMapOverrideName will cause templates/server-configmap.yaml
       ## to NOT generate a ConfigMap resource
       ##
-      configMapOverrideName: ""
+      configMapOverrideName: "server-override"
 
       ingress:
         ## If true, Prometheus server Ingress will be created

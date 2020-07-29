@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: prometheus-server-config
+  name: prometheus-server-override
   namespace: monitoring
   labels:
     app: prometheus
 data:
-  prometheus.yml: |
+  prometheus-override.yml: |
     rule_files:
       - /etc/config/recording_rules.yml
       - /etc/config/alerting_rules.yml
