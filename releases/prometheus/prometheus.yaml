@@ -353,14 +353,14 @@ spec:
         ## Additional configmap-reload volume directories
         ##
         extraVolumeDirs:
-          - /etc/alerts
+          - /etc/reload-alerts
 
 
         ## Additional configmap-reload mounts
         ##
         extraConfigmapMounts:
           - name: kong-gateway-alerts
-            mountPath: /etc/alerts
+            mountPath: /etc/reload-alerts
             subPath: ""
             configMap: kong-gateway-alerts
             readOnly: true
