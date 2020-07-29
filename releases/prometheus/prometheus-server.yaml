@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: prometheus-server
+  name: prometheus-server-config
   namespace: monitoring
   labels:
     app: prometheus
