@@ -357,13 +357,12 @@ spec:
 
         ## Additional configmap-reload mounts
         ##
-        extraConfigmapMounts: []
-          # - name: prometheus-alerts
-          #   mountPath: /etc/alerts.d
-          #   subPath: ""
-          #   configMap: prometheus-alerts
-          #   readOnly: true
-
+        extraConfigmapMounts:
+          - name: kong-gateway-alerts
+            mountPath: /etc/config/configmap-alert-rules
+            subPath: "kong-gateway-alerts.yaml"
+            configMap: kong-gateway-alerts
+            readOnly: true
 
         ## configmap-reload resource requests and limits
         ## Ref: http://kubernetes.io/docs/user-guide/compute-resources/
@@ -1205,6 +1204,7 @@ spec:
         rule_files:
           - /etc/config/recording_rules.yml
           - /etc/config/alerting_rules.yml
+          - /etc/config/configmap-alert-rules/*.yaml
         ## Below two files are DEPRECATED will be removed from this default values file
           - /etc/config/rules
           - /etc/config/alerts

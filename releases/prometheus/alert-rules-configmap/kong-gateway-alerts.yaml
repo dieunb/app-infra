@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kong-gateway-alerts
+  namespace: monitoring
+labels:
+  app: prometheus
+data:
+  alerts: |
+    groups:
+      - name: kubernetes-network
+        rules:
+        - alert: KongGateway5xx
+          annotations:
+            summary: 'There a burst in 5xx in {{ $labels.instance }} instance.'
+          expr: |
+            sum by(instance)(increase(kong_http_status{code=~"5.."}[5m])) > 10
+          for: 0s
+          labels:
+            severity: critical
