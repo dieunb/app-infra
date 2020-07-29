@@ -6,7 +6,7 @@ metadata:
   labels:
     app: prometheus
 data:
-  alerts: |
+  kong-gateway-alerts.yaml: |
     groups:
       - name: kubernetes-network
         rules:
