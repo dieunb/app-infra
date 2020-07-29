@@ -673,7 +673,11 @@ spec:
           subPath: ""
           configMap: kong-gateway-alerts
           readOnly: true
-
+        - name: kafka-rules
+          mountPath: /etc/config/kafka
+          subPath: ""
+          configMap: kafla-rules
+          readOnly: true
       ## Additional Prometheus server Secret mounts
       # Defines additional mounts with secrets. Secrets must be manually created in the namespace.
       extraSecretMounts: []

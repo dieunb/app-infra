@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kafka-rules
+  namespace: monitoring
+  labels:
+    app: prometheus
+data:
+  kafka-rules.yaml: |
+    groups:
+    - name: Kafka_Alerts
+      rules:
+        - alert: Offline_Partiton_Count
+          expr: sum(kafka_controller_kafkacontroller_offlinepartitionscount_value) by (instance)  > 0
+          for: 1m
+          labels:
+            severity: critical
+          annotations:
+            summary: 'Kafka {{ $labels.instance }}: {{ $value }} partitons offline'
+            description: 'After successful leader election, if the leader for partition dies, then the partition moves to the OfflinePartition state. Offline partitions are not available for reading and writing. Restart the brokers, if needed, and check the logs for errors.'
