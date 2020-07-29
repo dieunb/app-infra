@@ -669,7 +669,7 @@ spec:
 
       extraConfigmapMounts:
         - name: kong-gateway-alerts
-          mountPath: /etc/config/alert-rules
+          mountPath: "" # /etc/config/alert-rules
           subPath: ""
           configMap: kong-gateway-alerts
           readOnly: true
