@@ -669,8 +669,8 @@ spec:
 
       extraConfigmapMounts:
         - name: kong-gateway-alerts
-          mountPath: "" # /etc/config/alert-rules
-          subPath: ""
+          mountPath: /etc/config/application
+          subPath: "application"
           configMap: kong-gateway-alerts
           readOnly: true
 
