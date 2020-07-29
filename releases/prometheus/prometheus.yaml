@@ -352,14 +352,15 @@ spec:
         extraArgs: {}
         ## Additional configmap-reload volume directories
         ##
-        extraVolumeDirs: []
+        extraVolumeDirs:
+          - /etc/alerts
 
 
         ## Additional configmap-reload mounts
         ##
         extraConfigmapMounts:
           - name: kong-gateway-alerts
-            mountPath: /etc/config/alert-rules
+            mountPath: /etc/alerts
             subPath: ""
             configMap: kong-gateway-alerts
             readOnly: true
@@ -394,12 +395,7 @@ spec:
 
         ## Additional configmap-reload mounts
         ##
-        extraConfigmapMounts:
-          - name: kong-gateway-alerts
-            mountPath: /etc/config/alert-rules
-            subPath: ""
-            configMap: kong-gateway-alerts
-            readOnly: true
+        extraConfigmapMounts: {}
 
         ## configmap-reload resource requests and limits
         ## Ref: http://kubernetes.io/docs/user-guide/compute-resources/
