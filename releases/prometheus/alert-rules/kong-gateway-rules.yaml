@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kong-gateway-alerts
+  name: kong-gateway-rules
   namespace: monitoring
   labels:
     app: prometheus
 data:
-  kong-gateway-alerts.yaml: |
+  kong-gateway-rules.yaml: |
     groups:
       - name: kubernetes-network
         rules:
