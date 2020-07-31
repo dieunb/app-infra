@@ -359,9 +359,15 @@ spec:
         ##
         extraConfigmapMounts:
           - name: kong-gateway-rules
+            mountPath: /etc/config/application
+            subPath: ""
             configMap: kong-gateway-rules
+            readOnly: true
           - name: kafka-rules
+            mountPath: /etc/config/kafka
+            subPath: ""
             configMap: kafka-rules
+            readOnly: true
         ## configmap-reload resource requests and limits
         ## Ref: http://kubernetes.io/docs/user-guide/compute-resources/
         ##
