@@ -28,7 +28,7 @@ chartsSyncInterval: "3m"
 # Period on which to update the Helm release status in `HelmRelease` resources
 statusUpdateInterval: "30s"
 # Amount of workers processing releases
-workers: 4
+workers: 1
 
 # Helm versions supported by this operator instance
 helm:

@@ -15,8 +15,7 @@ kubectl create secret generic flux-git-deploy --from-file=identity=your_private_
 helm3 upgrade -i -f fluxcd/flux.yaml flux fluxcd/flux -n fluxcd --version=1.2.0
 
 # helm-operator
-helm3 upgrade -i -f fluxcd/helm_operator.yaml helm_operator fluxcd/helm-operator -n fluxcd
-
+helm3 upgrade -i -f fluxcd/helm_operator.yaml helm-operator fluxcd/helm-operator -n fluxcd
 ```
 
 ## References
