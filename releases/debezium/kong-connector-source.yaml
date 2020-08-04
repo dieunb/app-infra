@@ -6,6 +6,7 @@ metadata:
   namespace: devops
   labels:
     strimzi.io/cluster: debezium
+    connector_name: kong-connector-source
 spec:
   class: io.debezium.connector.postgresql.PostgresConnector
   tasksMax: 1
