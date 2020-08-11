@@ -23,6 +23,13 @@ metadata:
   namespace: application
   labels:
     app: web-service
+spec:
+  selector:
+    app: web-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
 ---
 apiVersion: apps/v1
 kind: Deployment
