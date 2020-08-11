@@ -44,5 +44,6 @@ spec:
       containers:
       - name: api
         image: dieunb/test_kong_service:latest
+        imagePullPolicy: "IfNotPresent"
         command: ["bundle", "exec", "puma", "-p", "80", "-C", "config/puma.rb"]
 
