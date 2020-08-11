@@ -13,7 +13,7 @@ spec:
         paths:
         - path: /
           backend:
-            serviceName: web-service-api
+            serviceName: web-service
             servicePort: 80
 ---
 apiVersion: v1
