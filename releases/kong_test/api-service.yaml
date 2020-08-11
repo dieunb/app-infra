@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kong-tmp
+  namespace: devops
+  labels:
+    app: kong-tmp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kong-tmp
+  template:
+    metadata:
+      labels:
+        app: kong-tmp
+    spec:
+      containers:
+      - name: kong-proxy
+        image: kong:2.0.3-ubuntu
+        command:
+          - sleep
+          - "3600"

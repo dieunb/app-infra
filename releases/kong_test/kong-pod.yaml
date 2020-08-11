@@ -1,0 +1,48 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: service-api-ingress
+  namespace: application
+  annotations:
+    kubernetes.io/ingress.class: kong
+spec:
+  rules:
+    - host: api.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: web-service-api
+            servicePort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-service
+  namespace: application
+  labels:
+    app: web-service
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-service
+  namespace: application
+  labels:
+    app: web-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-service
+  template:
+    metadata:
+      labels:
+        app: web-service
+    spec:
+      containers:
+      - name: api
+        image: dieunb/test_kong_service:latest
+        command:  ["bundle", "exec", "puma", "-p", "80", "-C", "config/puma.rb"]
+
