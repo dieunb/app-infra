@@ -44,5 +44,5 @@ spec:
       containers:
       - name: api
         image: dieunb/test_kong_service:latest
-        command:  ["bundle", "exec", "puma", "-p", "80", "-C", "config/puma.rb"]
+        command: ["bundle", "exec", "puma", "-p", "80", "-C", "config/puma.rb"]
 
