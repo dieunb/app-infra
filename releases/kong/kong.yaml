@@ -55,7 +55,7 @@ spec:
       admin_error_log: off #/dev/stderr
       headers: "off"
       database: "postgres"
-      log_level: crit
+      log_level: debug
       plugins: bundled,eh-authentication,mobile-force-update,eh-authorization
       pg_host:
         valueFrom:
