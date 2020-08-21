@@ -22,7 +22,7 @@ spec:
         - name: UPDATE
           value: "false"
         ports:
-        - containerPort: 3200
+        - containerPort: 3310
           name: api
           protocol: TCP
         volumeMounts:
@@ -32,8 +32,10 @@ spec:
           exec:
             command:
             - /readyness.sh
-          initialDelaySeconds: 20
-          timeoutSeconds: 2
+          initialDelaySeconds: 90
+          timeoutSeconds: 10
+          periodSeconds: 30
+          failureThreshold: 10
       - name: freshclam
         image: quay.io/ukhomeofficedigital/clamav:latest
         env:
@@ -46,8 +48,10 @@ spec:
           exec:
             command:
             - /readyness.sh
-          initialDelaySeconds: 20
-          timeoutSeconds: 2
+          initialDelaySeconds: 90
+          timeoutSeconds: 10
+          periodSeconds: 30
+          failureThreshold: 10
       volumes:
       - name: avdata
         emptyDir: {}
