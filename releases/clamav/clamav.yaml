@@ -8,7 +8,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    name: clamav
+    matchLabels:
+      name: clamav
   template:
     metadata:
       labels:
