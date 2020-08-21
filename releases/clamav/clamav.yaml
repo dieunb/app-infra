@@ -19,9 +19,6 @@ spec:
       - name: clamd
         image: quay.io/ukhomeofficedigital/clamav:latest
         imagePullPolicy: "IfNotPresent"
-        env:
-        - name: UPDATE
-          value: "false"
         ports:
         - containerPort: 3310
           name: api
@@ -37,23 +34,3 @@ spec:
           timeoutSeconds: 30
           periodSeconds: 30
           failureThreshold: 10
-      - name: freshclam
-        image: quay.io/ukhomeofficedigital/clamav:latest
-        imagePullPolicy: "IfNotPresent"
-        env:
-        - name: UPDATE_ONLY
-          value: "true"
-        volumeMounts:
-        - mountPath: /var/lib/clamav
-          name: avdata
-        livenessProbe:
-          exec:
-            command:
-            - /readyness.sh
-          initialDelaySeconds: 90
-          timeoutSeconds: 30
-          periodSeconds: 30
-          failureThreshold: 10
-      volumes:
-      - name: avdata
-        emptyDir: {}
