@@ -28,6 +28,10 @@ spec:
             command:
             - /readyness.sh
           initialDelaySeconds: 90
-          timeoutSeconds: 30
+          timeoutSeconds: 10
           periodSeconds: 30
           failureThreshold: 10
+      - name: scanner
+        image: dieunb/virus-scan:0.0.2
+        imagePullPolicy: "IfNotPresent"
+        command: ['sh', '-c', 'echo The app is running! && sleep 3600']
