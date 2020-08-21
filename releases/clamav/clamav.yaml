@@ -10,9 +10,9 @@ spec:
   selector:
     app: clamav
   ports:
-  - name: zombie-port # Actually, we do not use this port but it is still needed to allow the service to receive TCP traffic.
-    port: 1234
-    targetPort: 1234
+  - name: api
+    port: 3310
+    targetPort: 3310
 ---
 apiVersion: apps/v1
 kind: Deployment
