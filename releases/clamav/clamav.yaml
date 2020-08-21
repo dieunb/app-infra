@@ -20,16 +20,16 @@ metadata:
   name: clamav
   namespace: application
   labels:
-    name: clamav
+    app: clamav
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: clamav
+      app: clamav
   template:
     metadata:
       labels:
-        name: clamav
+        app: clamav
     spec:
       containers:
         - name: clamd
