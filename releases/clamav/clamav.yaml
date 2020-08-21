@@ -23,9 +23,6 @@ spec:
         - containerPort: 3310
           name: api
           protocol: TCP
-        volumeMounts:
-          - mountPath: /var/lib/clamav
-            name: avdata
         livenessProbe:
           exec:
             command:
