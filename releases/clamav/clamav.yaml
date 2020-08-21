@@ -18,6 +18,7 @@ spec:
       containers:
       - name: clamd
         image: quay.io/ukhomeofficedigital/clamav:latest
+        imagePullPolicy: "IfNotPresent"
         env:
         - name: UPDATE
           value: "false"
@@ -38,6 +39,7 @@ spec:
           failureThreshold: 10
       - name: freshclam
         image: quay.io/ukhomeofficedigital/clamav:latest
+        imagePullPolicy: "IfNotPresent"
         env:
         - name: UPDATE_ONLY
           value: "true"
