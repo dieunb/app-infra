@@ -1,20 +1,38 @@
 # Configure Kubernetes provider and connect to the Kubernetes API server
 provider "kubernetes" {
-  host = "https://localhost:6443"
-  config_context_auth_info = "docker-desktop"
-  config_context_cluster   = "docker-for-desktop"
+  config_context_cluster   = "docker-desktop"
 }
 
-# Create an Nginx pod
-resource "kubernetes_pod" "nginx" {
+# Create a deployment
+resource "kubernetes_deployment" "web-server" {
   metadata {
-    name = "terraform-example"
+    name = "web-server"
+    labels {
+      name = "nginx"
+    }
   }
 
   spec {
-    container {
-      image = "nginx:1.15.3"
-      name  = "example"
+    replicas = 0
+    selector {
+      match_labels = {
+        name = "nginx"
+      }
+    }
+
+    template {
+      metadata {
+        labels = {
+          name = "nginx"
+        }
+      }
+
+      spec {
+        container {
+          image = "nginx:1.15.3"
+          name  = "nginx"
+        }
+      }
     }
   }
 }
@@ -22,14 +40,14 @@ resource "kubernetes_pod" "nginx" {
 # Create an service
 resource "kubernetes_service" "nginx" {
   metadata {
-    name = "terraform-example"
+    name = "web-server"
   }
   spec {
     selector {
-      run = "${kubernetes_pod.nginx.metadata.0.labels.run}"
+      name = "${kubernetes_deployment.web-server.metadata.0.labels.name}"
     }
     port {
-      port = 80
+      port = 8888
     }
 
     type = "NodePort"
