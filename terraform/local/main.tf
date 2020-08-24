@@ -1,3 +1,4 @@
+# https://github.com/hashicorp/terraform-provider-kubernetes
 # Configure Kubernetes provider and connect to the Kubernetes API server
 provider "kubernetes" {
   config_context_cluster   = "docker-desktop"
