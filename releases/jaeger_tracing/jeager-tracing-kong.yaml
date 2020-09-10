@@ -8,9 +8,10 @@ metadata:
     kubernetes.io/ingress.class: kong
 spec:
   rules:
-  - http:
+  - host: grafana.internal.local
+    http:
       paths:
-      - path: /jeager
+      - path: /
         backend:
           serviceName: jeager-tracing-query
           servicePort: 80
