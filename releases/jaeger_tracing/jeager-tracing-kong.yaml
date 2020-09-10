@@ -8,7 +8,7 @@ metadata:
     kubernetes.io/ingress.class: kong
 spec:
   rules:
-  - host: grafana.internal.local
+  - host: jeager.internal.local
     http:
       paths:
       - path: /
