@@ -60,7 +60,7 @@ spec:
           # cassandra.tls.enabled: false
       elasticsearch:
         scheme: http
-        host: elasticsearch-master.monitoring
+        host: elasticsearch-elasticsearch-master.monitoring
         port: 9200
         user: elastic
         usePassword: false
