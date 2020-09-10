@@ -53,7 +53,7 @@ spec:
 
     ## String to partially override elasticsearch.fullname template (will maintain the release name)
     ##
-    # nameOverride:
+    nameOverride: ""
 
     ## String to fully override elasticsearch.fullname template
     ##
