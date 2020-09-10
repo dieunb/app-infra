@@ -57,7 +57,7 @@ spec:
 
     ## String to fully override elasticsearch.fullname template
     ##
-    # fullnameOverride:
+    fullnameOverride: "elasticsearch"
 
     ## Bitnami Minideb image version
     ## ref: https://hub.docker.com/r/bitnami/minideb/tags/
