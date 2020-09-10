@@ -10,7 +10,7 @@ spec:
   releaseName: jeager-tracing
   chart:
     repository: https://jaegertracing.github.io/helm-charts
-    name: jaegertracing/jaeger
+    name: jaeger
     version: 0.36.0
   values:
     # Default values for jaeger.
