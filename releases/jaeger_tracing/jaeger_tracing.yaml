@@ -25,7 +25,7 @@ spec:
     tag: 1.19.2
 
     nameOverride: ""
-    fullnameOverride: "jeager_tracing"
+    fullnameOverride: "jeager-tracing"
 
     storage:
       # allowed values (cassandra, elasticsearch)
