@@ -19,7 +19,7 @@ spec:
 
     provisionDataStore:
       cassandra: false
-      elasticsearch: true
+      elasticsearch: false
       kafka: false
 
     tag: 1.19.2
@@ -63,7 +63,7 @@ spec:
         host: elasticsearch-master.monitoring
         port: 9200
         user: elastic
-        usePassword: true
+        usePassword: false
         password: changeme
         # indexPrefix: test
         ## Use existing secret (ignores previous password)
