@@ -1,0 +1,16 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jeager-tracing
+  namespace: monitoring
+  annotations:
+    kubernetes.io/ingress.class: kong
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /jeager
+        backend:
+          serviceName: jeager-tracing-query
+          servicePort: 80
