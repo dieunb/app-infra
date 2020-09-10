@@ -2,12 +2,12 @@
 apiVersion: helm.fluxcd.io/v1
 kind: HelmRelease
 metadata:
-  name: jeager_tracing
+  name: jeager-tracing
   namespace: monitoring
   annotations:
     flux.weave.works/automated: "false"
 spec:
-  releaseName: jeager_tracing
+  releaseName: jeager-tracing
   chart:
     repository: https://jaegertracing.github.io/helm-charts
     name: jaegertracing/jaeger
