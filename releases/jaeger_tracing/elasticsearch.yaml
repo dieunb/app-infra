@@ -470,7 +470,7 @@ spec:
         ## resources, such as Minikube.
         limits:
           cpu: 100m
-          memory: 1G
+          memory: 2G
         requests:
           cpu: 25m
           memory: 0.5G
