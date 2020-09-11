@@ -469,11 +469,11 @@ spec:
         ## choice for the user. This also increases chances charts run on environments with little
         ## resources, such as Minikube.
         limits: {}
-        #   cpu: 100m
-        #   memory: 2176Mi
+          cpu: 100m
+          memory: 1G
         requests:
           cpu: 25m
-          memory: 2048Mi
+          memory: 0.5G
       ## Elasticsearch data container's liveness and readiness probes
       ## ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
       ##
