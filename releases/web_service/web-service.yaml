@@ -6,6 +6,7 @@ metadata:
   namespace: application
   annotations:
     kubernetes.io/ingress.class: kong
+    konghq.com/plugins: sbx-mobile-mobile-force-update
 spec:
   rules:
     - host: api.internal.local
@@ -55,4 +56,22 @@ spec:
         command: ["bundle", "exec", "puma", "-p", "80", "-C", "config/puma.rb"]
         ports:
           - containerPort: 80
-
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: sbx-mobile-mobile-force-update
+  namespace: application
+config:
+  blacklist:
+    - method: ""
+      host: ""
+      path: "test-deprecated-route-1"
+      version_range: []
+    - method: ""
+      host: ""
+      path: "test-deprecated-route-2"
+      version_range:
+      - 0.0.0
+      - 1.0.0
+plugin: mobile-force-update

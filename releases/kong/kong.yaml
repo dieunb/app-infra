@@ -81,7 +81,7 @@ spec:
     # Specify Kong's Docker image and repository details here
     image:
       repository: dieunb/kong-gateway
-      tag: "2.1.2"
+      tag: "2.1.2-dev2"
       # kong-enterprise-k8s image (Kong OSS + Enterprise plugins)
       # repository: kong-docker-kong-enterprise-k8s.bintray.io/kong-enterprise-k8s
       # tag: "2.0.4.2-alpine"
