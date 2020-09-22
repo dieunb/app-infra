@@ -64,13 +64,9 @@ metadata:
   namespace: application
 config:
   blacklist:
-    - method: ""
-      host: ""
-      path: "test-deprecated-route-1"
+    - path: "test-deprecated-route-1"
       version_range: []
-    - method: ""
-      host: ""
-      path: "test-deprecated-route-2"
+    - path: "test-deprecated-route-2"
       version_range:
       - 0.0.0
       - 1.0.0
