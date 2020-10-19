@@ -1143,7 +1143,7 @@ spec:
       ## Prometheus Operator ServiceMonitor configuration
       ##
       serviceMonitor:
-        enabled: true
+        enabled: false
         ## Namespace in which Prometheus is running
         ##
         # namespace: monitoring
