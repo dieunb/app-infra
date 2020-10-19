@@ -1,0 +1,41 @@
+---
+apiVersion: configuration.konghq.com/v1
+kind: KongIngress
+metadata:
+  name: thanos-ki
+  namespace: monitoring
+route:
+  methods:
+    - POST
+    - GET
+    - PUT
+    - PATCH
+    - OPTION
+    - HEAD
+  regex_priority: 0
+  strip_path: true
+  preserve_host: false
+  https_redirect_status_code: 302
+  protocols:
+    - https
+    - http
+proxy:
+  path: /
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: thanos-ingress
+  namespace: monitoring
+  annotations:
+    konghq.com/override: thanos-ki
+    kubernetes.io/ingress.class: kong
+spec:
+  rules:
+    - host: querier.thanos.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: thanos-querier
+            servicePort: 9090
