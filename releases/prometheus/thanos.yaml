@@ -94,7 +94,7 @@ spec:
       ## Dinamically configure store APIs using DNS discovery
       ##
       dnsDiscovery:
-        enabled: true
+        enabled: false
         ## Sidecars service name to discover them using DNS discovery
         ## Evaluated as a template.
         # sidecarsService: "{{ .Release.Name }}-prometheus-thanos"
@@ -105,7 +105,8 @@ spec:
 
       ## Statically configure store APIs to connect with Thanos Querier
       ##
-      stores: []
+      stores:
+        - thanos-storegateway.monitoring:10901
 
       ## Querier Service Discovery Configuration
       ## Specify content for servicediscovery.yml
