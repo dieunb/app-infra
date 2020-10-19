@@ -1,3 +1,6 @@
 debezium-connectors/debezium-connector-postgres/
 kong-203/
 /terraform/local/.*
+releases/prometheus/thanos-secret.yaml
+pending_releases/prometheus/thanos-secret.yaml
+thanos-raw-secret.yaml

@@ -60,7 +60,7 @@ spec:
     ## Secret with Objstore Configuration
     ## Note: This will override objstoreConfig
     ##
-    # existingObjstoreSecret:
+    existingObjstoreSecret: thanos-secret
     ##  optional item list for specifying a custom Secret key. If so, path should be objstore.yml
     # existingObjstoreSecretItems: []
 
@@ -935,7 +935,7 @@ spec:
     ruler:
       ## Set to true to enable Thanos Ruler component
       ##
-      enabled: true
+      enabled: false
 
       ## Log level
       ##
