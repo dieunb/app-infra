@@ -8,8 +8,11 @@
 Update current flux / helm-operator release
 
 ```
+# Create fluxcd namespace
+kubectl create namespace fluxcd
+
 # Create flux-git-deploy from your private ssh key
-kubectl create secret generic flux-git-deploy --from-file=identity=your_private_ssh_key_path
+kubectl create secret generic flux-git-deploy -n fluxcd --from-file=identity=your_private_ssh_key_path
 
 # flux
 helm3 upgrade -i -f fluxcd/flux.yaml flux fluxcd/flux -n fluxcd --version=1.2.0
