@@ -39,3 +39,10 @@ spec:
           backend:
             serviceName: thanos-querier
             servicePort: 9090
+    - host: compactor.thanos.internal.local
+      http:
+        paths:
+        - path: /
+          backend:
+            serviceName: thanos-compactor
+            servicePort: 9090
