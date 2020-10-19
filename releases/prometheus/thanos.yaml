@@ -27,7 +27,6 @@ spec:
     ## ref: https://hub.docker.com/r/bitnami/thanos/tags/
     ##
     image:
-      registry: docker.io
       repository: thanosio/thanos
       tag: 0.15.0
       ## Specify a imagePullPolicy. Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
