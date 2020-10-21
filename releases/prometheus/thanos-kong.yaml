@@ -46,3 +46,7 @@ spec:
           backend:
             serviceName: thanos-compactor
             servicePort: 9090
+
+
+
+ helm3 upgrade prometheus --namespace agents -f prometheus-values.yaml stable/prometheus --version 9.3.3 --debug --recreate-pods
