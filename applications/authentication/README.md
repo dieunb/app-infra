@@ -16,3 +16,16 @@ docker network connect kong-gateway_default authentication
 ```
 
 ## Configuration service and route in Kong
+
+
+## Play with gprc
+
+```
+# Start gprc server
+./bin/grpc
+
+# Start a client and make a call to server by irb -r ./config/environment.rb
+client = ::Rpc::JobService::Stub.new('0.0.0.0:9003', :this_channel_is_insecure)
+request = ::Rpc::GetJobReq.new(id: 1)
+client.get_job(request)
+```
