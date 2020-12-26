@@ -15,16 +15,18 @@ WORKDIR $APP_ROOT
 ENV RACK_ENV='production'
 
 # Adding gems
-COPY Gemfile Gemfile
-COPY Gemfile.lock Gemfile.lock
+COPY authentication/Gemfile Gemfile
+COPY authentication/Gemfile.lock Gemfile.lock
 
 RUN gem install bundler && \
   bundle config set --local without 'development test' && \
   bundle install --jobs 20 --retry 5
 
 # Adding project files
-COPY . .
+COPY authentication/ .
+COPY grpc_proto ../grpc_proto
 
-EXPOSE 3000
+EXPOSE 9003
 
-CMD ["bundle", "exec", "puma", "-p", "3000"]
+# CMD ["bundle", "exec", "puma", "-p", "3000"]
+CMD ["./bin/grpc"]

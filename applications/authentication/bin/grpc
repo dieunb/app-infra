@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
-require_relative '../rpc/jobs_controller'
+require_relative '../rpc_controllers/jobs_controller'
 
 cli = Gruf::Cli::Executor.new
 cli.run
