@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+$LOAD_PATH.unshift File.expand_path('../../grpc_proto/lib/ruby', __dir__)
+require 'Jobs_services_pb'
+
 Gruf.configure do |c|
   c.server_binding_url = '0.0.0.0:9003'
   # The size of the underlying thread pool. No more concurrent requests can be made
