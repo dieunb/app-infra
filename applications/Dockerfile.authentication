@@ -26,7 +26,9 @@ RUN gem install bundler && \
 COPY authentication/ .
 COPY grpc_proto ../grpc_proto
 
-EXPOSE 9003
+# EXPOSE 9003
 
 # CMD ["bundle", "exec", "puma", "-p", "3000"]
-CMD ["./bin/grpc"]
+# CMD ["./bin/grpc"]
+
+CMD ["sleep","3600"]

@@ -29,6 +29,10 @@ GEM
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     minitest (5.14.2)
+    nio4r (2.5.4)
+    puma (5.1.1)
+      nio4r (~> 2.0)
+    rack (2.2.3)
     slop (4.8.2)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -41,6 +45,8 @@ PLATFORMS
 DEPENDENCIES
   byebug
   gruf
+  puma
+  rack
 
 BUNDLED WITH
    2.2.3

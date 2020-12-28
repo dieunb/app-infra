@@ -10,7 +10,7 @@ module Rpc
     def get_job
       # job = ::Job.find(request.message.id)
       job_id = 1
-      Rpc::GetJobResp.new(id: job_id)
+      Rpc::GetJobResp.new(id: job_id, name: 'Hello from RPC server')
     rescue StandardError => _e
       fail!(:not_found, :job_not_found, "Failed to find Job with ID: #{request.message.id}")
     end
