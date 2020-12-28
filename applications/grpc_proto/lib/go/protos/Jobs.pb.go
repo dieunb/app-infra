@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0-devel
 // 	protoc        v3.14.0
-// source: protos/Jobs.proto
+// source: protos/jobs.proto
 
 package rpc
 
@@ -31,7 +31,7 @@ type GetJobReq struct {
 func (x *GetJobReq) Reset() {
 	*x = GetJobReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_Jobs_proto_msgTypes[0]
+		mi := &file_protos_jobs_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -44,7 +44,7 @@ func (x *GetJobReq) String() string {
 func (*GetJobReq) ProtoMessage() {}
 
 func (x *GetJobReq) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_Jobs_proto_msgTypes[0]
+	mi := &file_protos_jobs_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *GetJobReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetJobReq.ProtoReflect.Descriptor instead.
 func (*GetJobReq) Descriptor() ([]byte, []int) {
-	return file_protos_Jobs_proto_rawDescGZIP(), []int{0}
+	return file_protos_jobs_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GetJobReq) GetId() uint64 {
@@ -79,7 +79,7 @@ type GetJobResp struct {
 func (x *GetJobResp) Reset() {
 	*x = GetJobResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_protos_Jobs_proto_msgTypes[1]
+		mi := &file_protos_jobs_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -92,7 +92,7 @@ func (x *GetJobResp) String() string {
 func (*GetJobResp) ProtoMessage() {}
 
 func (x *GetJobResp) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_Jobs_proto_msgTypes[1]
+	mi := &file_protos_jobs_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -105,7 +105,7 @@ func (x *GetJobResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetJobResp.ProtoReflect.Descriptor instead.
 func (*GetJobResp) Descriptor() ([]byte, []int) {
-	return file_protos_Jobs_proto_rawDescGZIP(), []int{1}
+	return file_protos_jobs_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetJobResp) GetId() uint64 {
@@ -122,10 +122,10 @@ func (x *GetJobResp) GetName() string {
 	return ""
 }
 
-var File_protos_Jobs_proto protoreflect.FileDescriptor
+var File_protos_jobs_proto protoreflect.FileDescriptor
 
-var file_protos_Jobs_proto_rawDesc = []byte{
-	0x0a, 0x11, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x4a, 0x6f, 0x62, 0x73, 0x2e, 0x70, 0x72,
+var file_protos_jobs_proto_rawDesc = []byte{
+	0x0a, 0x11, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73, 0x2f, 0x6a, 0x6f, 0x62, 0x73, 0x2e, 0x70, 0x72,
 	0x6f, 0x74, 0x6f, 0x12, 0x03, 0x72, 0x70, 0x63, 0x22, 0x1b, 0x0a, 0x09, 0x47, 0x65, 0x74, 0x4a,
 	0x6f, 0x62, 0x52, 0x65, 0x71, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x04, 0x52, 0x02, 0x69, 0x64, 0x22, 0x30, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x4a, 0x6f, 0x62, 0x52,
@@ -140,23 +140,23 @@ var file_protos_Jobs_proto_rawDesc = []byte{
 }
 
 var (
-	file_protos_Jobs_proto_rawDescOnce sync.Once
-	file_protos_Jobs_proto_rawDescData = file_protos_Jobs_proto_rawDesc
+	file_protos_jobs_proto_rawDescOnce sync.Once
+	file_protos_jobs_proto_rawDescData = file_protos_jobs_proto_rawDesc
 )
 
-func file_protos_Jobs_proto_rawDescGZIP() []byte {
-	file_protos_Jobs_proto_rawDescOnce.Do(func() {
-		file_protos_Jobs_proto_rawDescData = protoimpl.X.CompressGZIP(file_protos_Jobs_proto_rawDescData)
+func file_protos_jobs_proto_rawDescGZIP() []byte {
+	file_protos_jobs_proto_rawDescOnce.Do(func() {
+		file_protos_jobs_proto_rawDescData = protoimpl.X.CompressGZIP(file_protos_jobs_proto_rawDescData)
 	})
-	return file_protos_Jobs_proto_rawDescData
+	return file_protos_jobs_proto_rawDescData
 }
 
-var file_protos_Jobs_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
-var file_protos_Jobs_proto_goTypes = []interface{}{
+var file_protos_jobs_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_protos_jobs_proto_goTypes = []interface{}{
 	(*GetJobReq)(nil),  // 0: rpc.GetJobReq
 	(*GetJobResp)(nil), // 1: rpc.GetJobResp
 }
-var file_protos_Jobs_proto_depIdxs = []int32{
+var file_protos_jobs_proto_depIdxs = []int32{
 	0, // 0: rpc.JobService.GetJob:input_type -> rpc.GetJobReq
 	1, // 1: rpc.JobService.GetJob:output_type -> rpc.GetJobResp
 	1, // [1:2] is the sub-list for method output_type
@@ -166,13 +166,13 @@ var file_protos_Jobs_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_protos_Jobs_proto_init() }
-func file_protos_Jobs_proto_init() {
-	if File_protos_Jobs_proto != nil {
+func init() { file_protos_jobs_proto_init() }
+func file_protos_jobs_proto_init() {
+	if File_protos_jobs_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_protos_Jobs_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_jobs_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetJobReq); i {
 			case 0:
 				return &v.state
@@ -184,7 +184,7 @@ func file_protos_Jobs_proto_init() {
 				return nil
 			}
 		}
-		file_protos_Jobs_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_protos_jobs_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetJobResp); i {
 			case 0:
 				return &v.state
@@ -201,18 +201,18 @@ func file_protos_Jobs_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_protos_Jobs_proto_rawDesc,
+			RawDescriptor: file_protos_jobs_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_protos_Jobs_proto_goTypes,
-		DependencyIndexes: file_protos_Jobs_proto_depIdxs,
-		MessageInfos:      file_protos_Jobs_proto_msgTypes,
+		GoTypes:           file_protos_jobs_proto_goTypes,
+		DependencyIndexes: file_protos_jobs_proto_depIdxs,
+		MessageInfos:      file_protos_jobs_proto_msgTypes,
 	}.Build()
-	File_protos_Jobs_proto = out.File
-	file_protos_Jobs_proto_rawDesc = nil
-	file_protos_Jobs_proto_goTypes = nil
-	file_protos_Jobs_proto_depIdxs = nil
+	File_protos_jobs_proto = out.File
+	file_protos_jobs_proto_rawDesc = nil
+	file_protos_jobs_proto_goTypes = nil
+	file_protos_jobs_proto_depIdxs = nil
 }
